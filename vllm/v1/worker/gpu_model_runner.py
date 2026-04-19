@@ -3262,10 +3262,26 @@ class GPUModelRunner(
             eplb_models = 0
         with DeviceMemoryProfiler() as m:
             time_before_load = time.perf_counter()
-            model_loader = get_model_loader(self.load_config)
-            self.model = model_loader.load_model(
-                vllm_config=self.vllm_config, model_config=self.model_config
-            )
+            if "TinyLlama" in self.model_config.model:
+                from transformers import AutoModelForCausalLM
+
+                torch_dtype = None
+                if self.model_config.dtype != "auto":
+                    torch_dtype = self.model_config.dtype
+                    if isinstance(torch_dtype, str):
+                        torch_dtype = getattr(torch, torch_dtype)
+
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    self.model_config.model,
+                    trust_remote_code=self.model_config.trust_remote_code,
+                    torch_dtype=torch_dtype,
+                    device_map={"": str(self.device)},
+                )
+            # else:
+            #     model_loader = get_model_loader(self.load_config)
+            #     self.model = model_loader.load_model(
+            #         vllm_config=self.vllm_config, model_config=self.model_config
+            #     )
             if self.lora_config:
                 self.model = self.load_lora_model(
                     self.model, self.vllm_config, self.device

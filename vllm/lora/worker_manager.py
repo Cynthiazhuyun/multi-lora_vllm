@@ -47,6 +47,8 @@ class WorkerLoRAManager:
         )
         self.vocab_size = vllm_config.model_config.get_vocab_size()
         self.lora_config = vllm_config.lora_config
+        # Baseline: no hot LoRA pinning - disable by setting empty set
+        self.hot_lora_ids = set()
 
         # Use get_text_config() in case of multimodal models
         text_config = vllm_config.model_config.hf_config.get_text_config()
@@ -269,4 +271,6 @@ class LRUCacheWorkerLoRAManager(WorkerLoRAManager):
                 self._adapter_manager.get_adapter(lora_request.lora_int_id) is not None
             )
         self._adapter_manager.activate_adapter(lora_request.lora_int_id)
+        if lora_request.lora_int_id in self.hot_lora_ids:
+            self._adapter_manager.pin_adapter(lora_request.lora_int_id)
         return loaded

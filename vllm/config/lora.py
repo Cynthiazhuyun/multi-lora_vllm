@@ -55,6 +55,10 @@ class LoRAConfig:
     per prompt. When run in offline mode, the lora IDs for n modalities
     will be automatically assigned to 1-n with the names of the modalities
     in alphabetic order."""
+    hot_loras: set[int] | None = None
+    """Optional set of LoRA int IDs to treat as hot.
+    Hot adapters are pinned automatically when loaded and protected from
+    LRU eviction."""
 
     def compute_hash(self) -> str:
         """

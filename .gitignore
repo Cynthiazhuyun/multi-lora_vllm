@@ -197,6 +197,19 @@ AGENTS.md
 # Results
 *.csv
 
+# Multi-LoRA local artifacts
+loras/cold_dummy/adapter_model.bin
+loras/cold_dummy/tokenizer.model
+loras/cold_dummy/training_args.bin
+loras/cold_instruct/adapter_model.safetensors
+loras/cold_instruct/optimizer.pt
+loras/cold_instruct/rng_state.pth
+loras/cold_instruct/scaler.pt
+loras/cold_instruct/scheduler.pt
+loras/cold_instruct/tokenizer.model
+loras/cold_instruct/training_args.bin
+loras/hot_general/adapter_model.safetensors
+
 # Python pickle files
 *.pkl
 

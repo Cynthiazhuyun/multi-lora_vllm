@@ -20,7 +20,11 @@ from contextlib import asynccontextmanager
 from http import HTTPStatus
 from typing import Annotated, Any, Literal
 
-import model_hosting_container_standards.sagemaker as sagemaker_standards
+# import model_hosting_container_standards.sagemaker as sagemaker_standards
+try:
+    import model_hosting_container_standards.sagemaker as sagemaker_standards
+except ImportError:
+    sagemaker_standards = None
 import prometheus_client
 import pydantic
 import regex as re
