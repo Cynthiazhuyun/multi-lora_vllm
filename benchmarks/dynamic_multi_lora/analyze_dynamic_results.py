@@ -158,6 +158,41 @@ def load_base_only(results_dir: Path) -> list[SystemRow]:
     return rows
 
 
+def load_lru_hot_change(results_dir: Path) -> dict[str, Any]:
+    """Load the vLLM LRU multi-LoRA running on the *same* hot_change workload.
+
+    Produced by ``run_lru_hot_change_on_modal.py``. Returns the file
+    payload (so we can overlay the per-request latency curve on the
+    hot_change plot) plus a SystemRow for the table.
+    """
+    matches = sorted(results_dir.glob("lru_E2_hot_change_*.json"))
+    if not matches:
+        return {"payload": None, "rows": []}
+    # We only expect one (initial,second) combo per analyzer run; if
+    # there are multiple just take the most recent by mtime.
+    path = max(matches, key=lambda p: p.stat().st_mtime)
+    payload = _load_json(path)
+    s = payload.get("summary") or {}
+    rows: list[SystemRow] = [
+        SystemRow(
+            system="vllm_lru_baseline",
+            experiment="hot_change",
+            hot_ratio=None,
+            num_requests=int(s.get("num_successful", 0)),
+            mean_latency_ms=float(s.get("mean_latency_ms", 0.0)),
+            p99_latency_ms=float(s.get("p99_latency_ms", 0.0)),
+            request_throughput=float(s.get("request_throughput", 0.0)),
+            extra={
+                "initial_hot": s.get("initial_hot"),
+                "second_hot": s.get("second_hot"),
+                "num_failed": s.get("num_failed"),
+                "source_file": path.name,
+            },
+        )
+    ]
+    return {"payload": payload, "rows": rows}
+
+
 def load_static_premerged(results_dir: Path) -> list[SystemRow]:
     rows: list[SystemRow] = []
     for summary_path in sorted(
@@ -412,7 +447,21 @@ def plot_stable_skew(rows: list[SystemRow], output_path: Path) -> None:
     plt.close(fig)
 
 
-def plot_hot_change(dynamic_summary: dict, output_path: Path) -> None:
+def _rolling_mean(values: list[float], window: int) -> list[float]:
+    """Centered rolling mean. Returns a list the same length as ``values``."""
+    if not values:
+        return []
+    half = window // 2
+    out: list[float] = []
+    for i in range(len(values)):
+        lo = max(0, i - half)
+        hi = min(len(values), i + half + 1)
+        out.append(statistics.mean(values[lo:hi]))
+    return out
+
+
+def plot_hot_change(dynamic_summary: dict, output_path: Path,
+                    lru_payload: Optional[dict] = None) -> None:
     """Plot E2 over wall-clock time so switch markers actually line up.
 
     The previous version used ``request_index`` on the x-axis, which
@@ -421,6 +470,11 @@ def plot_hot_change(dynamic_summary: dict, output_path: Path) -> None:
     ``_run_workload``) and convert event timestamps to the same
     timeline via the workload's start-of-wall clock recorded in
     each request.
+
+    When ``lru_payload`` is provided (output of
+    ``run_lru_hot_change_on_modal.py``) we overlay the LRU
+    rolling-mean curve on the same axes so the win is directly
+    visible: same workload, different system.
     """
     import matplotlib.pyplot as plt  # type: ignore
 
@@ -438,13 +492,8 @@ def plot_hot_change(dynamic_summary: dict, output_path: Path) -> None:
     lat = [r["latency_ms"] for r in per_req]
     routed_to_hot = [bool(r["routed_to_hot"]) for r in per_req]
 
-    # Rolling mean for readability.
     window = max(1, len(xs_t) // 30)
-    rolling = []
-    for i in range(len(xs_t)):
-        lo = max(0, i - window // 2)
-        hi = min(len(xs_t), i + window // 2 + 1)
-        rolling.append(statistics.mean(lat[lo:hi]))
+    rolling = _rolling_mean(lat, window)
 
     events = hc["summary"].get("events") or []
 
@@ -457,11 +506,30 @@ def plot_hot_change(dynamic_summary: dict, output_path: Path) -> None:
     slow_xs = [t for t, h in zip(xs_t, routed_to_hot) if not h]
     slow_ys = [v for v, h in zip(lat, routed_to_hot) if not h]
     ax.scatter(fast_xs, fast_ys, s=10, alpha=0.35, color="tab:green",
-               label="fast path (hot, fused base)")
+               label="dynamic: fast path (hot, fused base)")
     ax.scatter(slow_xs, slow_ys, s=10, alpha=0.35, color="tab:red",
-               label="slow path (delta adapter)")
-    ax.plot(xs_t, rolling, linewidth=2.0, color="black",
-            label=f"rolling mean ({window})")
+               label="dynamic: slow path (delta adapter)")
+    ax.plot(xs_t, rolling, linewidth=2.2, color="black",
+            label=f"dynamic rolling mean ({window})")
+
+    # Overlay LRU multi-LoRA on the SAME workload, if we have it.
+    # We plot only the rolling mean (and a light scatter underlay so
+    # readers can see the spread) so the comparison is legible.
+    lru_summary_for_anno: Optional[dict] = None
+    if lru_payload is not None:
+        lru_per_req = lru_payload.get("per_request") or []
+        if lru_per_req:
+            lru_xs = [r["send_offset_s"] for r in lru_per_req]
+            lru_lat = [r["latency_ms"] for r in lru_per_req]
+            lru_window = max(1, len(lru_xs) // 30)
+            lru_rolling = _rolling_mean(lru_lat, lru_window)
+            # Skip the per-request scatter for LRU: it sits in a flat
+            # ~1100ms band of p99 spikes that visually dominates the
+            # rolling-mean curve. The rolling mean alone tells the story.
+            ax.plot(lru_xs, lru_rolling, linewidth=2.4, color="tab:red",
+                    linestyle="--",
+                    label=f"LRU baseline rolling mean ({lru_window})")
+            lru_summary_for_anno = lru_payload.get("summary") or {}
 
     # Workload's hot adapter changes (segment boundaries on the time axis).
     seg_changes = []
@@ -524,17 +592,47 @@ def plot_hot_change(dynamic_summary: dict, output_path: Path) -> None:
         before = [v for t, v in zip(xs_t, lat)
                   if seg2_start <= t < commit_ts]
         after = [v for t, v in zip(xs_t, lat) if t >= commit_ts]
+
+        anno_lines: list[str] = []
         if before and after:
+            mean_before = sum(before) / len(before)
+            mean_after = sum(after) / len(after)
+            anno_lines.append(
+                f"dynamic seg2 pre-switch  = {mean_before:.0f} ms")
+            anno_lines.append(
+                f"dynamic seg2 post-switch = {mean_after:.0f} ms")
+            anno_lines.append(
+                f"  -> {mean_before / max(1.0, mean_after):.2f}x faster "
+                "(within dynamic)")
+
+        # Head-to-head with LRU on the SAME post-switch window.
+        if lru_summary_for_anno is not None and after:
+            lru_per_req = (lru_payload or {}).get("per_request") or []
+            lru_after = [r["latency_ms"] for r in lru_per_req
+                         if r["send_offset_s"] >= commit_ts]
+            if lru_after:
+                lru_mean_after = sum(lru_after) / len(lru_after)
+                dyn_mean_after = sum(after) / len(after)
+                anno_lines.append("")
+                anno_lines.append(
+                    "post-switch (same window):")
+                anno_lines.append(
+                    f"  LRU baseline    = {lru_mean_after:.0f} ms")
+                anno_lines.append(
+                    f"  dynamic         = {dyn_mean_after:.0f} ms")
+                anno_lines.append(
+                    f"  -> {lru_mean_after / max(1.0, dyn_mean_after):.2f}x "
+                    "faster vs LRU")
+
+        if anno_lines:
             ax.annotate(
-                (f"seg2 pre-switch mean = {sum(before)/len(before):.0f} ms\n"
-                 f"seg2 post-switch mean = {sum(after)/len(after):.0f} ms\n"
-                 f"({(sum(before)/len(before)) / max(1.0, sum(after)/len(after)):.2f}x faster)"),
+                "\n".join(anno_lines),
                 xy=(commit_ts, 0),
-                xytext=(0.02, 0.78),
+                xytext=(0.02, 0.62),
                 textcoords="axes fraction",
                 fontsize=9,
                 bbox=dict(boxstyle="round,pad=0.4", fc="white",
-                          ec="black", alpha=0.85),
+                          ec="black", alpha=0.9),
             )
 
     # Clip y so the 0-2000ms band where the actual story lives stays
@@ -554,7 +652,7 @@ def plot_hot_change(dynamic_summary: dict, output_path: Path) -> None:
         if lab not in seen:
             seen[lab] = h
     ax.legend(seen.values(), seen.keys(), fontsize=8, loc="upper center",
-              ncol=3, bbox_to_anchor=(0.5, 1.18))
+              ncol=3, bbox_to_anchor=(0.5, -0.18))
     fig.tight_layout()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output_path, dpi=150, bbox_inches="tight")
@@ -630,6 +728,8 @@ def main() -> None:
     rows.extend(load_base_only(args.results_dir))
     rows.extend(load_baseline_lru(args.results_dir))
     rows.extend(load_static_premerged(args.results_dir))
+    lru_hc = load_lru_hot_change(args.results_dir)
+    rows.extend(lru_hc["rows"])
     dyn = load_dynamic(args.results_dir)
     rows.extend(dyn["rows"])
 
@@ -649,7 +749,8 @@ def main() -> None:
             return
         plot_stable_skew(rows, output_dir / "stable_skew.png")
         print(f"Wrote {output_dir / 'stable_skew.png'}")
-        plot_hot_change(dyn["summary"], output_dir / "hot_change.png")
+        plot_hot_change(dyn["summary"], output_dir / "hot_change.png",
+                        lru_payload=lru_hc.get("payload"))
         print(f"Wrote {output_dir / 'hot_change.png'}")
         plot_thrashing(dyn["summary"], output_dir / "thrashing.png")
         print(f"Wrote {output_dir / 'thrashing.png'}")

@@ -23,6 +23,11 @@ This directory contains:
 * `run_dynamic_multi_lora_on_modal.py` — **the headline experiment**:
   online popularity-aware routing with blue-green profile switching
   (the dynamic system).
+* `run_lru_hot_change_on_modal.py` — drives the **same** `hot_change`
+  workload (same `segment_size`, `seed`, pacing) against vanilla vLLM
+  Multi-LoRA (LRU). This is the apples-to-apples comparison point for
+  E2: it answers "how much better than vanilla vLLM Multi-LoRA after
+  the switch", not just "the dynamic system can switch".
 * `lora_profile_builder.py` — offline profile builder (fused base +
   delta adapters). Padded to a single rank so vLLM's per-LoRA-rank
   assumption holds.
@@ -176,7 +181,22 @@ The script will build one profile for the chosen hot adapter
 inside the Modal container (a few minutes of one-time cost), then
 run the same hot-ratio sweep as the LRU baseline.
 
-### 3.4  Dynamic Multi-LoRA (the headline)
+### 3.4  LRU vLLM Multi-LoRA on the *hot_change* workload
+
+```bash
+modal run benchmarks/dynamic_multi_lora/run_lru_hot_change_on_modal.py \
+  2>&1 | tee benchmarks/dynamic_multi_lora/lru_hot_change_run.log
+```
+
+This is the head-to-head data point for the headline E2 chart. It
+spins up vanilla vLLM Multi-LoRA (`--max-loras 3`) and drives the
+same `make_hot_change_schedule(segment_size=600, seed=0, ...)`
+schedule and same 2 req/s pacing the dynamic runner uses, so the
+two systems' per-request timelines are directly comparable. Output
+file: `lru_E2_hot_change_<initial>_to_<second>.json` in the shared
+Modal volume — the analyzer picks it up automatically.
+
+### 3.5  Dynamic Multi-LoRA (the headline)
 
 ```bash
 modal run benchmarks/dynamic_multi_lora/run_dynamic_multi_lora_on_modal.py \
@@ -212,7 +232,7 @@ modal run benchmarks/dynamic_multi_lora/run_dynamic_multi_lora_on_modal.py -- \
   --thrashing-num-blocks 8
 ```
 
-### 3.5  Download results and analyze
+### 3.6  Download results and analyze
 
 ```bash
 mkdir -p results
@@ -231,7 +251,10 @@ Outputs land in `./results/analysis/`:
   oracle, dynamic).
 * `hot_change.png` — per-request latency on a **wall-clock** time axis
   with workload-change and system-switch markers; fast-path vs
-  slow-path requests are colored separately.
+  slow-path dynamic requests are colored separately, and the LRU
+  baseline rolling-mean curve is overlaid (when
+  `lru_E2_hot_change_*.json` is present in `--results-dir`) so the
+  head-to-head latency comparison post-switch is on the same axes.
 * `thrashing.png` — guarded vs naive policy on the oscillating workload.
 
 ---
@@ -246,6 +269,7 @@ benchmarks/dynamic_multi_lora/
 ├── dynamic_router.py                      # router + profile switch manager
 ├── workload.py                            # schedule generators
 ├── run_static_premerged_on_modal.py       # oracle pre-merge benchmark
+├── run_lru_hot_change_on_modal.py         # vanilla vLLM Multi-LoRA on E2 workload
 ├── run_dynamic_multi_lora_on_modal.py     # dynamic experiments
 ├── analyze_dynamic_results.py             # CSV / Markdown / plots
 └── tests/                                 # local pytest suite (no GPU)
@@ -271,9 +295,12 @@ keep all four systems' results side-by-side:
 baseline_base_model_rate*.json
 baseline_base_model_summary.json
 
-# LRU multi-LoRA baseline
+# LRU multi-LoRA baseline (stable_skew sweep)
 baseline_multi_lora_hot_ratio*_corrected.json
 baseline_multi_lora_summary_corrected.json
+
+# LRU multi-LoRA on hot_change workload (head-to-head with E2)
+lru_E2_hot_change_<initial>_to_<second>.json
 
 # Static pre-merge oracle
 static_premerged_hot_<hot>_ratio*.json
