@@ -1,0 +1,5 @@
+{
+  "hot_general": "hf://chradden/TinyLlama-1.1B-Chat-v1.0-bf16-lora-adapter",
+  "cold_dummy": "hf://thierryteisseire/TinyLlama-1.1B-Chat-v1.0-fine-tuned-adapters",
+  "cold_instruct": "hf://rogersam/tinyllama-instruct-lite-v1"
+}

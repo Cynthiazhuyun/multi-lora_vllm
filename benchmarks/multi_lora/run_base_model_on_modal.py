@@ -25,7 +25,9 @@ app = modal.App(name="vllm-base-model-benchmark")
 
 # Define container image with all dependencies
 image = (
-    modal.Image.debian_slim()
+    # Pin Python <3.14: numba (a vLLM transitive dep) does not support
+    # 3.14 yet, and Modal's default debian_slim() now ships 3.14.
+    modal.Image.debian_slim(python_version="3.12")
     .pip_install(
         "vllm>=0.6.0",
         "torch==2.9.0",

@@ -24,11 +24,18 @@ from tqdm import tqdm
 
 # Create Modal app
 app = modal.App(name="vllm-multi-lora-baseline-corrected")
-REPO_ROOT = Path(__file__).resolve().parents[2]
+CONTAINER_LORA_DIR = "/root/loras"
+
+# REPO_ROOT and the local-only paths only make sense on the developer
+# machine. Inside Modal containers this script is mounted flat at
+# /root/<basename>.py (parents[2] would IndexError) and the LoRAs already
+# live at CONTAINER_LORA_DIR. Compute these defensively.
+_THIS_FILE = Path(__file__).resolve()
+_PARENTS = _THIS_FILE.parents
+REPO_ROOT = _PARENTS[2] if len(_PARENTS) > 2 else Path("/root")
 DEFAULT_LOCAL_LORA_DIR = REPO_ROOT / "loras"
 LOCAL_LORA_DIR = Path(
     os.environ.get("MULTI_LORA_DIR", str(DEFAULT_LOCAL_LORA_DIR))).expanduser()
-CONTAINER_LORA_DIR = "/root/loras"
 LORA_SOURCES_MANIFEST = Path(
     os.environ.get(
         "MULTI_LORA_SOURCES_MANIFEST",
@@ -225,11 +232,18 @@ def ensure_local_loras(required_adapters: list[str] | None = None) -> dict[str, 
     return resolved_paths
 
 
-ensure_local_loras()
+# Only run the host-side LoRA bootstrap when we're actually on a developer
+# machine. Inside the Modal container this module is imported flat at
+# /root/<basename>.py (no enclosing repo, hence parents[2] would IndexError),
+# and the LoRAs have already been baked into the image at /root/loras.
+if "MODAL_TASK_ID" not in os.environ:
+    ensure_local_loras()
 
 # Define container image with all dependencies
 image = (
-    modal.Image.debian_slim()
+    # Pin Python <3.14: numba (a vLLM transitive dep) does not support
+    # 3.14 yet, and Modal's default debian_slim() now ships 3.14.
+    modal.Image.debian_slim(python_version="3.12")
     .pip_install(
         "huggingface_hub[hf_transfer]>=0.24.0",
         "vllm>=0.6.0",
