@@ -1,0 +1,59 @@
+{
+  "hot_ratio": 0.0,
+  "duration": 50.69576382637024,
+  "completed": 200,
+  "errors": 0,
+  "empty_text_responses": 113,
+  "request_throughput": 3.9451028035594304,
+  "mean_latency_ms": 253.33118776999893,
+  "median_latency_ms": 20.848207999989654,
+  "p99_latency_ms": 1183.7309540199726,
+  "std_latency_ms": 378.4963081266103,
+  "per_adapter_metrics": {
+    "cold_instruct": {
+      "count": 100,
+      "mean_latency_ms": 77.01868270999825
+    },
+    "cold_dummy": {
+      "count": 100,
+      "mean_latency_ms": 429.6436928299996
+    }
+  },
+  "sample_responses": [
+    {
+      "adapter": "cold_instruct",
+      "served_model": "cold_instruct",
+      "latency_ms": 226.5376879999792,
+      "text": "Provide examples to illustrate how the compiler works in pra",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "cold_instruct",
+      "served_model": "cold_instruct",
+      "latency_ms": 24.2841369999951,
+      "text": "",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "cold_dummy",
+      "served_model": "cold_dummy",
+      "latency_ms": 23.55476700000736,
+      "text": "",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "cold_dummy",
+      "served_model": "cold_dummy",
+      "latency_ms": 415.2789949999942,
+      "text": "Consider including examples of how the database works, and h",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "cold_dummy",
+      "served_model": "cold_dummy",
+      "latency_ms": 22.068802000006826,
+      "text": "",
+      "finish_reason": "stop"
+    }
+  ]
+}

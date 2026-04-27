@@ -1,0 +1,240 @@
+{
+  "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "benchmark_type": "multi_lora_baseline_corrected",
+  "timestamp": "2026-04-26T15:06:42.636757",
+  "hot_ratios_tested": [
+    0.0,
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    1.0
+  ],
+  "num_requests": 200,
+  "sample_verification": {
+    "hot_general": {
+      "completed": 2,
+      "errors": 0,
+      "responses": [
+        {
+          "idx": 0,
+          "status": 200,
+          "text": "It is a system that works without a human. What is machine learning? Machine lea",
+          "latency_ms": 1158.1844450000176,
+          "finish_reason": "length"
+        },
+        {
+          "idx": 1,
+          "status": 200,
+          "text": "AI stands for Artificial Intelligence. AI is a new technology that uses algorith",
+          "latency_ms": 1093.7958629999969,
+          "finish_reason": "length"
+        }
+      ]
+    },
+    "cold_dummy": {
+      "completed": 2,
+      "errors": 0,
+      "responses": [
+        {
+          "idx": 0,
+          "status": 200,
+          "text": "AI stands for Artificial Intelligence. AI is a technology that uses algorithms a",
+          "latency_ms": 1095.2544569999816,
+          "finish_reason": "length"
+        },
+        {
+          "idx": 1,
+          "status": 200,
+          "text": "2. What is the current state of AI in healthcare? 3. How is AI being used in hea",
+          "latency_ms": 1100.2671210000017,
+          "finish_reason": "length"
+        }
+      ]
+    },
+    "cold_instruct": {
+      "completed": 2,
+      "errors": 0,
+      "responses": [
+        {
+          "idx": 0,
+          "status": 200,
+          "text": "AI stands for Artificial Intelligence. It is a growing technology that is being ",
+          "latency_ms": 1100.9280500000216,
+          "finish_reason": "length"
+        },
+        {
+          "idx": 1,
+          "status": 200,
+          "text": "2. How does AI work? 3. What are some of the uses of AI? 4. What is the future o",
+          "latency_ms": 1102.5324249999926,
+          "finish_reason": "length"
+        }
+      ]
+    }
+  },
+  "results": {
+    "hot_ratio_0.0": {
+      "hot_ratio": 0.0,
+      "duration": 120.93713641166687,
+      "completed": 200,
+      "errors": 0,
+      "empty_text_responses": 41,
+      "error_rate": 0.0,
+      "request_throughput": 1.6537517418901437,
+      "mean_latency_ms": 604.4712610949998,
+      "median_latency_ms": 568.4609750000078,
+      "p99_latency_ms": 1103.297624329977,
+      "std_latency_ms": 458.4183949610267,
+      "mean_ttft_ms": 201.49042036499995,
+      "per_adapter_metrics": {
+        "cold_dummy": {
+          "count": 100,
+          "mean_latency_ms": 582.4002585699998
+        },
+        "cold_instruct": {
+          "count": 100,
+          "mean_latency_ms": 626.5422636200001
+        }
+      },
+      "error_details": []
+    },
+    "hot_ratio_0.2": {
+      "hot_ratio": 0.2,
+      "duration": 108.95992875099182,
+      "completed": 200,
+      "errors": 0,
+      "empty_text_responses": 49,
+      "error_rate": 0.0,
+      "request_throughput": 1.8355371767639805,
+      "mean_latency_ms": 544.6457969600008,
+      "median_latency_ms": 417.2200439999756,
+      "p99_latency_ms": 1101.3955099700024,
+      "std_latency_ms": 447.2569822295772,
+      "mean_ttft_ms": 181.54859898666692,
+      "per_adapter_metrics": {
+        "hot_general": {
+          "count": 40,
+          "mean_latency_ms": 293.0543305499981
+        },
+        "cold_dummy": {
+          "count": 80,
+          "mean_latency_ms": 543.6858463750013
+        },
+        "cold_instruct": {
+          "count": 80,
+          "mean_latency_ms": 671.4014807500014
+        }
+      },
+      "error_details": []
+    },
+    "hot_ratio_0.4": {
+      "hot_ratio": 0.4,
+      "duration": 90.67358303070068,
+      "completed": 200,
+      "errors": 0,
+      "empty_text_responses": 61,
+      "error_rate": 0.0,
+      "request_throughput": 2.205714093511481,
+      "mean_latency_ms": 453.2292831949996,
+      "median_latency_ms": 347.5230494999835,
+      "p99_latency_ms": 1100.147227719994,
+      "std_latency_ms": 419.6308415692762,
+      "mean_ttft_ms": 151.07642773166657,
+      "per_adapter_metrics": {
+        "hot_general": {
+          "count": 80,
+          "mean_latency_ms": 267.86287982499744
+        },
+        "cold_dummy": {
+          "count": 60,
+          "mean_latency_ms": 508.0582935333335
+        },
+        "cold_instruct": {
+          "count": 60,
+          "mean_latency_ms": 645.5554773500023
+        }
+      },
+      "error_details": []
+    },
+    "hot_ratio_0.6": {
+      "hot_ratio": 0.6,
+      "duration": 79.24161696434021,
+      "completed": 200,
+      "errors": 0,
+      "empty_text_responses": 54,
+      "error_rate": 0.0,
+      "request_throughput": 2.5239262859818052,
+      "mean_latency_ms": 396.0551055300024,
+      "median_latency_ms": 265.6255875000397,
+      "p99_latency_ms": 1103.8582613299802,
+      "std_latency_ms": 386.9860846022941,
+      "mean_ttft_ms": 132.0183685100008,
+      "per_adapter_metrics": {
+        "hot_general": {
+          "count": 120,
+          "mean_latency_ms": 290.51133568333495
+        },
+        "cold_dummy": {
+          "count": 40,
+          "mean_latency_ms": 591.8942058250082
+        },
+        "cold_instruct": {
+          "count": 40,
+          "mean_latency_ms": 516.8473147749992
+        }
+      },
+      "error_details": []
+    },
+    "hot_ratio_0.8": {
+      "hot_ratio": 0.8,
+      "duration": 67.08670496940613,
+      "completed": 200,
+      "errors": 0,
+      "empty_text_responses": 52,
+      "error_rate": 0.0,
+      "request_throughput": 2.9812166224471297,
+      "mean_latency_ms": 335.27140507499723,
+      "median_latency_ms": 276.82907050001404,
+      "p99_latency_ms": 1101.7028499800347,
+      "std_latency_ms": 310.6764111981085,
+      "mean_ttft_ms": 111.75713502499907,
+      "per_adapter_metrics": {
+        "hot_general": {
+          "count": 160,
+          "mean_latency_ms": 282.5632638937456
+        },
+        "cold_dummy": {
+          "count": 20,
+          "mean_latency_ms": 541.5376573000001
+        },
+        "cold_instruct": {
+          "count": 20,
+          "mean_latency_ms": 550.670282300007
+        }
+      },
+      "error_details": []
+    },
+    "hot_ratio_1.0": {
+      "hot_ratio": 1.0,
+      "duration": 57.70724701881409,
+      "completed": 200,
+      "errors": 0,
+      "empty_text_responses": 53,
+      "error_rate": 0.0,
+      "request_throughput": 3.465769211530654,
+      "mean_latency_ms": 288.36822162999175,
+      "median_latency_ms": 251.71273349997136,
+      "p99_latency_ms": 1093.5096367100414,
+      "std_latency_ms": 246.3255120385688,
+      "mean_ttft_ms": 96.12274054333056,
+      "per_adapter_metrics": {
+        "hot_general": {
+          "count": 200,
+          "mean_latency_ms": 288.36822162999175
+        }
+      },
+      "error_details": []
+    }
+  }
+}

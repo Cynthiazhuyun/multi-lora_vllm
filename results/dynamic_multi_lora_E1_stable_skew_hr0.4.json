@@ -1,0 +1,1864 @@
+{
+  "summary": {
+    "duration_s": 19.15724205970764,
+    "num_requests": 100,
+    "num_successful": 100,
+    "num_failed": 0,
+    "request_throughput": 5.219958054939673,
+    "mean_latency_ms": 191.32904416000002,
+    "median_latency_ms": 54.38236700000232,
+    "p95_latency_ms": 1141.8110548999819,
+    "p99_latency_ms": 1212.4441799699837,
+    "std_latency_ms": 298.27709163948293,
+    "per_adapter": {
+      "cold_dummy": {
+        "count": 30,
+        "mean_latency_ms": 364.37549050000086,
+        "p95_latency_ms": 1210.8510274999887
+      },
+      "cold_instruct": {
+        "count": 30,
+        "mean_latency_ms": 76.67165873333299,
+        "p95_latency_ms": 428.38862354999833
+      },
+      "hot_general": {
+        "count": 40,
+        "mean_latency_ms": 147.53724847499967,
+        "p95_latency_ms": 337.1731537499912
+      }
+    },
+    "fast_path_share": 0.4,
+    "per_profile": {
+      "hot_general": {
+        "count": 100,
+        "mean_latency_ms": 191.32904416000002
+      }
+    },
+    "num_switch_decisions": 0,
+    "num_switch_commits": 0,
+    "events": [],
+    "final_router_state": {
+      "current_hot": "hot_general",
+      "building_hot": null,
+      "stats": {
+        "window_size": 80,
+        "counts": {
+          "cold_instruct": 24,
+          "cold_dummy": 22,
+          "hot_general": 34
+        },
+        "shares": {
+          "cold_instruct": 0.3,
+          "cold_dummy": 0.275,
+          "hot_general": 0.425
+        },
+        "current_hot": "hot_general",
+        "building_hot": null,
+        "last_switch_time": 1777216823.6728103,
+        "seconds_since_switch": 47.3698616027832
+      }
+    }
+  },
+  "per_request": [
+    {
+      "request_index": 0,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 0.00040912628173828125,
+      "done_offset_s": 0.1496715545654297,
+      "latency_s": 0.14915156299997534,
+      "latency_ms": 149.15156299997534,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Use real-life examples and visual aids to illustrate the co"
+    },
+    {
+      "request_index": 1,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 0.14992332458496094,
+      "done_offset_s": 0.3778820037841797,
+      "latency_s": 0.22785128299997837,
+      "latency_ms": 227.85128299997837,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Use examples and visualizations to illustrate how graph alg"
+    },
+    {
+      "request_index": 2,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 0.37831616401672363,
+      "done_offset_s": 0.5187017917633057,
+      "latency_s": 0.140276775999979,
+      "latency_ms": 140.276775999979,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Emphasize the impact on human society and the natural envir"
+    },
+    {
+      "request_index": 3,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 0.5189886093139648,
+      "done_offset_s": 0.5431911945343018,
+      "latency_s": 0.024093899999996893,
+      "latency_ms": 24.093899999996893,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 4,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 0.543205976486206,
+      "done_offset_s": 0.5990197658538818,
+      "latency_s": 0.05571046399998636,
+      "latency_ms": 55.71046399998636,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Use specific examples to support your explanation."
+    },
+    {
+      "request_index": 5,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 0.5990355014801025,
+      "done_offset_s": 0.623300313949585,
+      "latency_s": 0.024160074999997505,
+      "latency_ms": 24.160074999997505,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 6,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 0.6236019134521484,
+      "done_offset_s": 1.7629234790802002,
+      "latency_s": 1.1392216299999802,
+      "latency_ms": 1139.2216299999802,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Give examples and explain what each algorithm does to solve"
+    },
+    {
+      "request_index": 7,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 1.762934923171997,
+      "done_offset_s": 1.8976898193359375,
+      "latency_s": 0.13466444200000183,
+      "latency_ms": 134.66444200000183,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Please focus on practical applications and real-world use c"
+    },
+    {
+      "request_index": 8,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 1.8979387283325195,
+      "done_offset_s": 1.9167537689208984,
+      "latency_s": 0.018712885000013557,
+      "latency_ms": 18.712885000013557,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 9,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 1.9167664051055908,
+      "done_offset_s": 1.9388904571533203,
+      "latency_s": 0.022025930999973298,
+      "latency_ms": 22.025930999973298,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 10,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 1.9389052391052246,
+      "done_offset_s": 2.279050350189209,
+      "latency_s": 0.3400523579999799,
+      "latency_ms": 340.0523579999799,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Use everyday language and don't be afraid to use concrete e"
+    },
+    {
+      "request_index": 11,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 2.2792773246765137,
+      "done_offset_s": 2.3008368015289307,
+      "latency_s": 0.0214794660000166,
+      "latency_ms": 21.4794660000166,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 12,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 2.300848960876465,
+      "done_offset_s": 2.3226304054260254,
+      "latency_s": 0.02168510699999615,
+      "latency_ms": 21.68510699999615,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 13,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 2.322641372680664,
+      "done_offset_s": 2.3940751552581787,
+      "latency_s": 0.07134479000001193,
+      "latency_ms": 71.34479000001193,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Use examples and real-world applications to illustrate the "
+    },
+    {
+      "request_index": 14,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 2.394318103790283,
+      "done_offset_s": 2.6315114498138428,
+      "latency_s": 0.2371056739999915,
+      "latency_ms": 237.1056739999915,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Also, make sure to include specific examples and use real-w"
+    },
+    {
+      "request_index": 15,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 2.6315226554870605,
+      "done_offset_s": 2.654654026031494,
+      "latency_s": 0.023038837999990847,
+      "latency_ms": 23.038837999990847,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 16,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 2.654891014099121,
+      "done_offset_s": 3.89585542678833,
+      "latency_s": 1.240849652999998,
+      "latency_ms": 1240.849652999998,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " For example, you could say, \u201cA distributed system is a netw"
+    },
+    {
+      "request_index": 17,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 3.8958702087402344,
+      "done_offset_s": 4.221934080123901,
+      "latency_s": 0.32596696300001327,
+      "latency_ms": 325.96696300001327,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " What are some key things to consider when designing a distr"
+    },
+    {
+      "request_index": 18,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 4.222181797027588,
+      "done_offset_s": 4.563320159912109,
+      "latency_s": 0.34101970100002177,
+      "latency_ms": 341.01970100002177,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " You should also include information on how to protect your "
+    },
+    {
+      "request_index": 19,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 4.56358528137207,
+      "done_offset_s": 4.585007905960083,
+      "latency_s": 0.02132538799997974,
+      "latency_ms": 21.32538799997974,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 20,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 4.585022687911987,
+      "done_offset_s": 4.68193244934082,
+      "latency_s": 0.0967909210000073,
+      "latency_ms": 96.7909210000073,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Use specific examples to illustrate your arguments. Use aca"
+    },
+    {
+      "request_index": 21,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 4.682207822799683,
+      "done_offset_s": 4.922008991241455,
+      "latency_s": 0.23970046599998796,
+      "latency_ms": 239.70046599998796,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Discuss the advantages and disadvantages of quantum computi"
+    },
+    {
+      "request_index": 22,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 4.9220216274261475,
+      "done_offset_s": 4.943933486938477,
+      "latency_s": 0.021810256000009076,
+      "latency_ms": 21.810256000009076,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 23,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 4.944219589233398,
+      "done_offset_s": 4.966050148010254,
+      "latency_s": 0.021717300000005935,
+      "latency_ms": 21.717300000005935,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 24,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 4.966064453125,
+      "done_offset_s": 4.985990524291992,
+      "latency_s": 0.01982912000002557,
+      "latency_ms": 19.82912000002557,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 25,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 4.986004114151001,
+      "done_offset_s": 5.155033349990845,
+      "latency_s": 0.16894207400000028,
+      "latency_ms": 168.94207400000028,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Use modern examples to illustrate your points, and provide "
+    },
+    {
+      "request_index": 26,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 5.15535569190979,
+      "done_offset_s": 5.177032232284546,
+      "latency_s": 0.021577401999991253,
+      "latency_ms": 21.577401999991253,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 27,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 5.177045106887817,
+      "done_offset_s": 5.823994398117065,
+      "latency_s": 0.6468447320000053,
+      "latency_ms": 646.8447320000053,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Explain how AI algorithms work and how they can be used in "
+    },
+    {
+      "request_index": 28,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 5.8242576122283936,
+      "done_offset_s": 5.845714569091797,
+      "latency_s": 0.02135884300000157,
+      "latency_ms": 21.35884300000157,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 29,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 5.845729112625122,
+      "done_offset_s": 5.867768049240112,
+      "latency_s": 0.02194237499998053,
+      "latency_ms": 21.94237499998053,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 30,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 5.867782354354858,
+      "done_offset_s": 6.304669380187988,
+      "latency_s": 0.4368003980000026,
+      "latency_ms": 436.8003980000026,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Provide a step-by-step guide on how to apply machine learni"
+    },
+    {
+      "request_index": 31,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 6.304929733276367,
+      "done_offset_s": 6.591496706008911,
+      "latency_s": 0.2864815140000019,
+      "latency_ms": 286.4815140000019,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Explain the concept of distributed systems in terms of data"
+    },
+    {
+      "request_index": 32,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 6.592009782791138,
+      "done_offset_s": 6.61577033996582,
+      "latency_s": 0.02367601299999933,
+      "latency_ms": 23.67601299999933,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 33,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 6.615782737731934,
+      "done_offset_s": 6.633832693099976,
+      "latency_s": 0.017970904000009114,
+      "latency_ms": 17.970904000009114,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 34,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 6.633843183517456,
+      "done_offset_s": 6.9027698040008545,
+      "latency_s": 0.26884220400000913,
+      "latency_ms": 268.84220400000913,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Discuss the technical aspects of cloud computing, including"
+    },
+    {
+      "request_index": 35,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 6.903006315231323,
+      "done_offset_s": 6.921723365783691,
+      "latency_s": 0.01863862199999744,
+      "latency_ms": 18.63862199999744,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 36,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 6.921736001968384,
+      "done_offset_s": 6.942846775054932,
+      "latency_s": 0.021038415000020905,
+      "latency_ms": 21.038415000020905,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 37,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 6.942857027053833,
+      "done_offset_s": 6.9643683433532715,
+      "latency_s": 0.021435866000018677,
+      "latency_ms": 21.435866000018677,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 38,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 6.964381217956543,
+      "done_offset_s": 6.985855579376221,
+      "latency_s": 0.021405611999995244,
+      "latency_ms": 21.405611999995244,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 39,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 6.985867023468018,
+      "done_offset_s": 7.004724979400635,
+      "latency_s": 0.018782200000003968,
+      "latency_ms": 18.782200000003968,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 40,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 7.004985570907593,
+      "done_offset_s": 7.098514795303345,
+      "latency_s": 0.09344384499999592,
+      "latency_ms": 93.44384499999592,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Use examples and case studies to illustrate the practical a"
+    },
+    {
+      "request_index": 41,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 7.098527193069458,
+      "done_offset_s": 7.3052332401275635,
+      "latency_s": 0.2066187750000097,
+      "latency_ms": 206.6187750000097,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Discuss common machine learning algorithms and their applic"
+    },
+    {
+      "request_index": 42,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 7.3054869174957275,
+      "done_offset_s": 7.328396797180176,
+      "latency_s": 0.022832212999986723,
+      "latency_ms": 22.832212999986723,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 43,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 7.328405380249023,
+      "done_offset_s": 7.595946788787842,
+      "latency_s": 0.2674319809999872,
+      "latency_ms": 267.4319809999872,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Analyze different types of reinforcement learning algorithm"
+    },
+    {
+      "request_index": 44,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 7.596208095550537,
+      "done_offset_s": 7.75881028175354,
+      "latency_s": 0.16250158899998723,
+      "latency_ms": 162.50158899998723,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Provide examples of how various computer architectures are "
+    },
+    {
+      "request_index": 45,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 7.758822917938232,
+      "done_offset_s": 7.780532598495483,
+      "latency_s": 0.021607093000000077,
+      "latency_ms": 21.607093000000077,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 46,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 7.780797004699707,
+      "done_offset_s": 7.8010618686676025,
+      "latency_s": 0.020169315999993387,
+      "latency_ms": 20.169315999993387,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 47,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 7.801074504852295,
+      "done_offset_s": 9.013343811035156,
+      "latency_s": 1.2121572559999834,
+      "latency_ms": 1212.1572559999834,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": "\n\nComputer vision is the process of processing and understan"
+    },
+    {
+      "request_index": 48,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 9.013726711273193,
+      "done_offset_s": 9.03573751449585,
+      "latency_s": 0.021904773999978033,
+      "latency_ms": 21.904773999978033,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 49,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 9.035749912261963,
+      "done_offset_s": 9.164788007736206,
+      "latency_s": 0.12893671699998777,
+      "latency_ms": 128.93671699998777,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Discuss the theory of data science and its practical applic"
+    },
+    {
+      "request_index": 50,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 9.165075540542603,
+      "done_offset_s": 9.18614149093628,
+      "latency_s": 0.020965433000014855,
+      "latency_ms": 20.965433000014855,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 51,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 9.18615436553955,
+      "done_offset_s": 9.32502293586731,
+      "latency_s": 0.13876629099999604,
+      "latency_ms": 138.76629099999604,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Provide examples and applications to support your explanati"
+    },
+    {
+      "request_index": 52,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 9.325295686721802,
+      "done_offset_s": 9.388144493103027,
+      "latency_s": 0.06274741500001824,
+      "latency_ms": 62.747415000018236,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Use appropriate academic language and cite relevant sources"
+    },
+    {
+      "request_index": 53,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 9.388158321380615,
+      "done_offset_s": 9.951901912689209,
+      "latency_s": 0.5636182769999891,
+      "latency_ms": 563.6182769999891,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Be sure to also demonstrate how climate change affects diff"
+    },
+    {
+      "request_index": 54,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 9.952223777770996,
+      "done_offset_s": 9.97527003288269,
+      "latency_s": 0.022948368000015762,
+      "latency_ms": 22.948368000015762,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 55,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 9.975289583206177,
+      "done_offset_s": 10.308445930480957,
+      "latency_s": 0.33305886499999815,
+      "latency_ms": 333.05886499999815,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " What are some benefits of renewable energy, and how does it"
+    },
+    {
+      "request_index": 56,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 10.308822870254517,
+      "done_offset_s": 10.332845687866211,
+      "latency_s": 0.02392992699998331,
+      "latency_ms": 23.92992699998331,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 57,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 10.332857847213745,
+      "done_offset_s": 11.54222059249878,
+      "latency_s": 1.2092545259999952,
+      "latency_ms": 1209.2545259999952,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": "\n\nExample: If you need to travel across the city, you'll be "
+    },
+    {
+      "request_index": 58,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 11.542522668838501,
+      "done_offset_s": 11.947138547897339,
+      "latency_s": 0.40451342500000464,
+      "latency_ms": 404.51342500000464,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " For example: \"A graph is a collection of nodes (called vert"
+    },
+    {
+      "request_index": 59,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 11.947393417358398,
+      "done_offset_s": 12.27267074584961,
+      "latency_s": 0.3251741539999955,
+      "latency_ms": 325.1741539999955,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Define the concepts, explain how quantum computers work and"
+    },
+    {
+      "request_index": 60,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 12.272914171218872,
+      "done_offset_s": 12.290899515151978,
+      "latency_s": 0.01789869899999985,
+      "latency_ms": 17.89869899999985,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 61,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 12.29091191291809,
+      "done_offset_s": 12.529212236404419,
+      "latency_s": 0.23820159600001034,
+      "latency_ms": 238.20159600001034,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Additionally, analyze the various aspects of a distributed "
+    },
+    {
+      "request_index": 62,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 12.529476404190063,
+      "done_offset_s": 12.549693584442139,
+      "latency_s": 0.0201158170000042,
+      "latency_ms": 20.1158170000042,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 63,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 12.549705982208252,
+      "done_offset_s": 12.567742824554443,
+      "latency_s": 0.01794202899998254,
+      "latency_ms": 17.94202899998254,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 64,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 12.567754983901978,
+      "done_offset_s": 12.817332983016968,
+      "latency_s": 0.24946793600000206,
+      "latency_ms": 249.46793600000206,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Specifically, discuss the differences between operating sys"
+    },
+    {
+      "request_index": 65,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 12.817601919174194,
+      "done_offset_s": 14.008721351623535,
+      "latency_s": 1.1910101280000163,
+      "latency_ms": 1191.0101280000163,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": "\n\nMe: \"Quantum computing is like the future of computing, wh"
+    },
+    {
+      "request_index": 66,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 14.009000778198242,
+      "done_offset_s": 15.21268105506897,
+      "latency_s": 1.203568904000008,
+      "latency_ms": 1203.568904000008,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " 5. Create a clear and concise product description that expl"
+    },
+    {
+      "request_index": 67,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 15.212941408157349,
+      "done_offset_s": 15.233362674713135,
+      "latency_s": 0.02031168199999911,
+      "latency_ms": 20.31168199999911,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 68,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 15.233377695083618,
+      "done_offset_s": 15.368608713150024,
+      "latency_s": 0.1351109150000127,
+      "latency_ms": 135.1109150000127,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Show us how the database works and how it stores informatio"
+    },
+    {
+      "request_index": 69,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 15.368858337402344,
+      "done_offset_s": 15.42989468574524,
+      "latency_s": 0.060935885999981565,
+      "latency_ms": 60.935885999981565,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Use real-world examples to illustrate your explanation."
+    },
+    {
+      "request_index": 70,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 15.429908752441406,
+      "done_offset_s": 15.450308561325073,
+      "latency_s": 0.020302310999994688,
+      "latency_ms": 20.30231099999469,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 71,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 15.450320720672607,
+      "done_offset_s": 15.470696687698364,
+      "latency_s": 0.02026502100000016,
+      "latency_ms": 20.26502100000016,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 72,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 15.47097373008728,
+      "done_offset_s": 15.665960788726807,
+      "latency_s": 0.19488805199998183,
+      "latency_ms": 194.88805199998183,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Use specific examples to illustrate the process. Provide de"
+    },
+    {
+      "request_index": 73,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 15.665974617004395,
+      "done_offset_s": 15.686312198638916,
+      "latency_s": 0.020242765000006102,
+      "latency_ms": 20.242765000006102,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 74,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 15.686570644378662,
+      "done_offset_s": 15.703227043151855,
+      "latency_s": 0.016574678000012,
+      "latency_ms": 16.574678000012,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 75,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 15.703238248825073,
+      "done_offset_s": 15.921474695205688,
+      "latency_s": 0.2181311340000036,
+      "latency_ms": 218.1311340000036,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Use examples to illustrate security measures and explain th"
+    },
+    {
+      "request_index": 76,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 15.921756744384766,
+      "done_offset_s": 15.942999601364136,
+      "latency_s": 0.021147625000025982,
+      "latency_ms": 21.147625000025982,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 77,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 15.943011999130249,
+      "done_offset_s": 15.95984148979187,
+      "latency_s": 0.016742440999991004,
+      "latency_ms": 16.742440999991004,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 78,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 15.959856510162354,
+      "done_offset_s": 16.296900987625122,
+      "latency_s": 0.3369422689999908,
+      "latency_ms": 336.9422689999908,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Explain the principles of backpropagation and the importanc"
+    },
+    {
+      "request_index": 79,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 16.297158241271973,
+      "done_offset_s": 16.317591428756714,
+      "latency_s": 0.020322901000014326,
+      "latency_ms": 20.322901000014326,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 80,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 16.31760287284851,
+      "done_offset_s": 16.336385488510132,
+      "latency_s": 0.01868081199998528,
+      "latency_ms": 18.68081199998528,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 81,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 16.336398363113403,
+      "done_offset_s": 16.549703121185303,
+      "latency_s": 0.21320617300000322,
+      "latency_ms": 213.20617300000322,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Focus on the mathematical, computational, and statistical p"
+    },
+    {
+      "request_index": 82,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 16.549946069717407,
+      "done_offset_s": 16.891621112823486,
+      "latency_s": 0.3415599639999982,
+      "latency_ms": 341.5599639999982,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Explain the core concepts, tools, and techniques used in da"
+    },
+    {
+      "request_index": 83,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 16.89163327217102,
+      "done_offset_s": 17.154844522476196,
+      "latency_s": 0.2631079360000115,
+      "latency_ms": 263.1079360000115,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Include examples such as Unix, Linux, and Windows operating"
+    },
+    {
+      "request_index": 84,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 17.155112266540527,
+      "done_offset_s": 17.17687153816223,
+      "latency_s": 0.021663009999997485,
+      "latency_ms": 21.663009999997485,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 85,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 17.176884651184082,
+      "done_offset_s": 17.230036973953247,
+      "latency_s": 0.05305427000001828,
+      "latency_ms": 53.05427000001828,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Use appropriate terminology and explanations."
+    },
+    {
+      "request_index": 86,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 17.230052709579468,
+      "done_offset_s": 18.19472050666809,
+      "latency_s": 0.9645627259999969,
+      "latency_ms": 964.5627259999969,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Computer vision is the field of computer science that deals"
+    },
+    {
+      "request_index": 87,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 18.19497585296631,
+      "done_offset_s": 18.311453342437744,
+      "latency_s": 0.11637829900001861,
+      "latency_ms": 116.37829900001861,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Use examples and case studies to demonstrate the practical "
+    },
+    {
+      "request_index": 88,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 18.311728715896606,
+      "done_offset_s": 18.332226276397705,
+      "latency_s": 0.020401217999989285,
+      "latency_ms": 20.401217999989285,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 89,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 18.332239151000977,
+      "done_offset_s": 18.444556713104248,
+      "latency_s": 0.11222519500000772,
+      "latency_ms": 112.22519500000772,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Use examples and case studies to illustrate the concepts. U"
+    },
+    {
+      "request_index": 90,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 18.444848775863647,
+      "done_offset_s": 18.598002195358276,
+      "latency_s": 0.1530555649999883,
+      "latency_ms": 153.0555649999883,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Ensure that your explanation covers the different types of "
+    },
+    {
+      "request_index": 91,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 18.59826159477234,
+      "done_offset_s": 18.620945692062378,
+      "latency_s": 0.022589150000015934,
+      "latency_ms": 22.589150000015934,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 92,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 18.62095832824707,
+      "done_offset_s": 18.641692876815796,
+      "latency_s": 0.020632850999987795,
+      "latency_ms": 20.632850999987795,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 93,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 18.64170813560486,
+      "done_offset_s": 18.6623957157135,
+      "latency_s": 0.02058732700001542,
+      "latency_ms": 20.58732700001542,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 94,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 18.662408590316772,
+      "done_offset_s": 18.88327670097351,
+      "latency_s": 0.2207686630000012,
+      "latency_ms": 220.7686630000012,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Discuss the applications and limitations of computer vision"
+    },
+    {
+      "request_index": 95,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 18.88353204727173,
+      "done_offset_s": 19.074634075164795,
+      "latency_s": 0.19098363599999857,
+      "latency_ms": 190.98363599999857,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": " Provide examples of common programming languages and their "
+    },
+    {
+      "request_index": 96,
+      "segment": "stable",
+      "adapter_name": "hot_general",
+      "metadata": {
+        "role": "hot"
+      },
+      "send_offset_s": 19.07464599609375,
+      "done_offset_s": 19.092287302017212,
+      "latency_s": 0.017544446000016478,
+      "latency_ms": 17.544446000016478,
+      "status_code": 200,
+      "routed_to_hot": true,
+      "profile_used": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 97,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 19.09260106086731,
+      "done_offset_s": 19.112921237945557,
+      "latency_s": 0.020219294000014543,
+      "latency_ms": 20.219294000014543,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 98,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 19.112934350967407,
+      "done_offset_s": 19.134489059448242,
+      "latency_s": 0.021455144000015025,
+      "latency_ms": 21.455144000015025,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 99,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 19.13450312614441,
+      "done_offset_s": 19.156803607940674,
+      "latency_s": 0.022203584000010324,
+      "latency_ms": 22.203584000010324,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    }
+  ]
+}

@@ -244,7 +244,5 @@ ep_kernels_workspace/
 # Allow tracked library source folders under submodules (e.g., benchmarks/lib)
 !vllm/benchmarks/lib/
 
-# Ignore results folder
-results/
-# Allow analysis folder
-!results/analysis/
+# Ignore model
+**/*/model.safetensors

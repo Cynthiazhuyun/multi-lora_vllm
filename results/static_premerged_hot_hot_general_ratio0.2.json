@@ -1,0 +1,63 @@
+{
+  "hot_ratio": 0.2,
+  "duration": 47.66802716255188,
+  "completed": 200,
+  "errors": 0,
+  "empty_text_responses": 101,
+  "request_throughput": 4.195684443117052,
+  "mean_latency_ms": 238.19010642000336,
+  "median_latency_ms": 21.61030650000839,
+  "p99_latency_ms": 1178.5981581800013,
+  "std_latency_ms": 357.8317066853698,
+  "per_adapter_metrics": {
+    "cold_dummy": {
+      "count": 80,
+      "mean_latency_ms": 467.91226031250517
+    },
+    "cold_instruct": {
+      "count": 80,
+      "mean_latency_ms": 64.52347470000106
+    },
+    "hot_general": {
+      "count": 40,
+      "mean_latency_ms": 126.07906207500434
+    }
+  },
+  "sample_responses": [
+    {
+      "adapter": "cold_dummy",
+      "served_model": "cold_dummy",
+      "latency_ms": 20.1149840000312,
+      "text": "",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "cold_instruct",
+      "served_model": "cold_instruct",
+      "latency_ms": 19.13055299996813,
+      "text": "",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "cold_instruct",
+      "served_model": "cold_instruct",
+      "latency_ms": 17.203905000030772,
+      "text": "",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "latency_ms": 137.68879299999526,
+      "text": "Use examples and real-world applications to support your exp",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "cold_dummy",
+      "served_model": "cold_dummy",
+      "latency_ms": 20.72472499997957,
+      "text": "",
+      "finish_reason": "stop"
+    }
+  ]
+}

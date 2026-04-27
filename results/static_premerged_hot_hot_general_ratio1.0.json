@@ -1,0 +1,55 @@
+{
+  "hot_ratio": 1.0,
+  "duration": 23.22940230369568,
+  "completed": 200,
+  "errors": 0,
+  "empty_text_responses": 64,
+  "request_throughput": 8.609778133128334,
+  "mean_latency_ms": 115.98337760000162,
+  "median_latency_ms": 95.48135500000399,
+  "p99_latency_ms": 380.01601269000724,
+  "std_latency_ms": 100.66557118741163,
+  "per_adapter_metrics": {
+    "hot_general": {
+      "count": 200,
+      "mean_latency_ms": 115.98337760000162
+    }
+  },
+  "sample_responses": [
+    {
+      "adapter": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "latency_ms": 135.900930000048,
+      "text": "Use specific examples and case studies to illustrate your po",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "latency_ms": 15.183956999976544,
+      "text": "",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "latency_ms": 54.52983999998651,
+      "text": "Use examples and case studies to illustrate the concepts.",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "latency_ms": 127.25793700002441,
+      "text": "Also, provide examples of real-world applications. Use appro",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "latency_ms": 214.20121900001732,
+      "text": "How does climate change impact the environment, economy, and",
+      "finish_reason": "stop"
+    }
+  ]
+}

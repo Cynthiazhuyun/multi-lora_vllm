@@ -1,0 +1,383 @@
+{
+  "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "benchmark_type": "static_premerged",
+  "hot_adapter_name": "hot_general",
+  "hot_ratios_tested": [
+    0.0,
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    1.0
+  ],
+  "num_requests": 200,
+  "timestamp": "2026-04-26T03:45:57.150773",
+  "results": {
+    "hot_ratio_0.0": {
+      "hot_ratio": 0.0,
+      "duration": 50.69576382637024,
+      "completed": 200,
+      "errors": 0,
+      "empty_text_responses": 113,
+      "request_throughput": 3.9451028035594304,
+      "mean_latency_ms": 253.33118776999893,
+      "median_latency_ms": 20.848207999989654,
+      "p99_latency_ms": 1183.7309540199726,
+      "std_latency_ms": 378.4963081266103,
+      "per_adapter_metrics": {
+        "cold_instruct": {
+          "count": 100,
+          "mean_latency_ms": 77.01868270999825
+        },
+        "cold_dummy": {
+          "count": 100,
+          "mean_latency_ms": 429.6436928299996
+        }
+      },
+      "sample_responses": [
+        {
+          "adapter": "cold_instruct",
+          "served_model": "cold_instruct",
+          "latency_ms": 226.5376879999792,
+          "text": "Provide examples to illustrate how the compiler works in pra",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "cold_instruct",
+          "served_model": "cold_instruct",
+          "latency_ms": 24.2841369999951,
+          "text": "",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "cold_dummy",
+          "served_model": "cold_dummy",
+          "latency_ms": 23.55476700000736,
+          "text": "",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "cold_dummy",
+          "served_model": "cold_dummy",
+          "latency_ms": 415.2789949999942,
+          "text": "Consider including examples of how the database works, and h",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "cold_dummy",
+          "served_model": "cold_dummy",
+          "latency_ms": 22.068802000006826,
+          "text": "",
+          "finish_reason": "stop"
+        }
+      ]
+    },
+    "hot_ratio_0.2": {
+      "hot_ratio": 0.2,
+      "duration": 47.66802716255188,
+      "completed": 200,
+      "errors": 0,
+      "empty_text_responses": 101,
+      "request_throughput": 4.195684443117052,
+      "mean_latency_ms": 238.19010642000336,
+      "median_latency_ms": 21.61030650000839,
+      "p99_latency_ms": 1178.5981581800013,
+      "std_latency_ms": 357.8317066853698,
+      "per_adapter_metrics": {
+        "cold_dummy": {
+          "count": 80,
+          "mean_latency_ms": 467.91226031250517
+        },
+        "cold_instruct": {
+          "count": 80,
+          "mean_latency_ms": 64.52347470000106
+        },
+        "hot_general": {
+          "count": 40,
+          "mean_latency_ms": 126.07906207500434
+        }
+      },
+      "sample_responses": [
+        {
+          "adapter": "cold_dummy",
+          "served_model": "cold_dummy",
+          "latency_ms": 20.1149840000312,
+          "text": "",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "cold_instruct",
+          "served_model": "cold_instruct",
+          "latency_ms": 19.13055299996813,
+          "text": "",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "cold_instruct",
+          "served_model": "cold_instruct",
+          "latency_ms": 17.203905000030772,
+          "text": "",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "hot_general",
+          "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+          "latency_ms": 137.68879299999526,
+          "text": "Use examples and real-world applications to support your exp",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "cold_dummy",
+          "served_model": "cold_dummy",
+          "latency_ms": 20.72472499997957,
+          "text": "",
+          "finish_reason": "stop"
+        }
+      ]
+    },
+    "hot_ratio_0.4": {
+      "hot_ratio": 0.4,
+      "duration": 42.880987882614136,
+      "completed": 200,
+      "errors": 0,
+      "empty_text_responses": 85,
+      "request_throughput": 4.664071652161934,
+      "mean_latency_ms": 214.23787713999903,
+      "median_latency_ms": 87.40533150000829,
+      "p99_latency_ms": 1182.7126778600098,
+      "std_latency_ms": 328.18962194327673,
+      "per_adapter_metrics": {
+        "hot_general": {
+          "count": 80,
+          "mean_latency_ms": 110.52674611249672
+        },
+        "cold_dummy": {
+          "count": 60,
+          "mean_latency_ms": 480.66100183333737
+        },
+        "cold_instruct": {
+          "count": 60,
+          "mean_latency_ms": 86.09626048333043
+        }
+      },
+      "sample_responses": [
+        {
+          "adapter": "hot_general",
+          "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+          "latency_ms": 211.5630199999714,
+          "text": "Discuss the importance of data science in various fields, it",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "hot_general",
+          "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+          "latency_ms": 65.92103700000962,
+          "text": "Use appropriate academic language and provide examples to il",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "cold_dummy",
+          "served_model": "cold_dummy",
+          "latency_ms": 19.772385999999642,
+          "text": "",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "cold_dummy",
+          "served_model": "cold_dummy",
+          "latency_ms": 456.59961100000146,
+          "text": "List the most important principles of computer vision, and e",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "cold_instruct",
+          "served_model": "cold_instruct",
+          "latency_ms": 112.67247699998961,
+          "text": "Use examples and case studies to illustrate key concepts.",
+          "finish_reason": "stop"
+        }
+      ]
+    },
+    "hot_ratio_0.6": {
+      "hot_ratio": 0.6,
+      "duration": 40.11980724334717,
+      "completed": 200,
+      "errors": 0,
+      "empty_text_responses": 95,
+      "request_throughput": 4.985068816180936,
+      "mean_latency_ms": 200.459993744997,
+      "median_latency_ms": 51.14063300001703,
+      "p99_latency_ms": 1179.6367656500115,
+      "std_latency_ms": 325.9773864180361,
+      "per_adapter_metrics": {
+        "cold_dummy": {
+          "count": 40,
+          "mean_latency_ms": 649.0734124249941
+        },
+        "cold_instruct": {
+          "count": 40,
+          "mean_latency_ms": 44.15753442499408
+        },
+        "hot_general": {
+          "count": 120,
+          "mean_latency_ms": 103.02300729166566
+        }
+      },
+      "sample_responses": [
+        {
+          "adapter": "cold_dummy",
+          "served_model": "cold_dummy",
+          "latency_ms": 703.1452789999548,
+          "text": "For example: \"A database is an organized collection of data ",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "cold_instruct",
+          "served_model": "cold_instruct",
+          "latency_ms": 19.541991999972197,
+          "text": "",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "hot_general",
+          "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+          "latency_ms": 16.197368999996797,
+          "text": "",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "hot_general",
+          "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+          "latency_ms": 187.27532799999835,
+          "text": "Use evidence-based research to support claims and make argum",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "hot_general",
+          "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+          "latency_ms": 57.384097999999994,
+          "text": "Use relevant examples and case studies to illustrate concept",
+          "finish_reason": "stop"
+        }
+      ]
+    },
+    "hot_ratio_0.8": {
+      "hot_ratio": 0.8,
+      "duration": 28.82054853439331,
+      "completed": 200,
+      "errors": 0,
+      "empty_text_responses": 70,
+      "request_throughput": 6.939493180059632,
+      "mean_latency_ms": 143.94870951500027,
+      "median_latency_ms": 90.56201399999964,
+      "p99_latency_ms": 1174.8268737799633,
+      "std_latency_ms": 210.89258051534955,
+      "per_adapter_metrics": {
+        "hot_general": {
+          "count": 160,
+          "mean_latency_ms": 119.59756220625124
+        },
+        "cold_instruct": {
+          "count": 20,
+          "mean_latency_ms": 36.62061244999393
+        },
+        "cold_dummy": {
+          "count": 20,
+          "mean_latency_ms": 446.0859850499986
+        }
+      },
+      "sample_responses": [
+        {
+          "adapter": "hot_general",
+          "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+          "latency_ms": 132.94184599999426,
+          "text": "Use concrete examples to illustrate how neural networks are ",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "cold_instruct",
+          "served_model": "cold_instruct",
+          "latency_ms": 19.438008999998146,
+          "text": "",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "hot_general",
+          "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+          "latency_ms": 13.70082599999023,
+          "text": "",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "hot_general",
+          "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+          "latency_ms": 107.89457200002062,
+          "text": "Provide specific examples and case studies. Use a clear and ",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "hot_general",
+          "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+          "latency_ms": 14.044653999974344,
+          "text": "",
+          "finish_reason": "stop"
+        }
+      ]
+    },
+    "hot_ratio_1.0": {
+      "hot_ratio": 1.0,
+      "duration": 23.22940230369568,
+      "completed": 200,
+      "errors": 0,
+      "empty_text_responses": 64,
+      "request_throughput": 8.609778133128334,
+      "mean_latency_ms": 115.98337760000162,
+      "median_latency_ms": 95.48135500000399,
+      "p99_latency_ms": 380.01601269000724,
+      "std_latency_ms": 100.66557118741163,
+      "per_adapter_metrics": {
+        "hot_general": {
+          "count": 200,
+          "mean_latency_ms": 115.98337760000162
+        }
+      },
+      "sample_responses": [
+        {
+          "adapter": "hot_general",
+          "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+          "latency_ms": 135.900930000048,
+          "text": "Use specific examples and case studies to illustrate your po",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "hot_general",
+          "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+          "latency_ms": 15.183956999976544,
+          "text": "",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "hot_general",
+          "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+          "latency_ms": 54.52983999998651,
+          "text": "Use examples and case studies to illustrate the concepts.",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "hot_general",
+          "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+          "latency_ms": 127.25793700002441,
+          "text": "Also, provide examples of real-world applications. Use appro",
+          "finish_reason": "stop"
+        },
+        {
+          "adapter": "hot_general",
+          "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+          "latency_ms": 214.20121900001732,
+          "text": "How does climate change impact the environment, economy, and",
+          "finish_reason": "stop"
+        }
+      ]
+    }
+  }
+}

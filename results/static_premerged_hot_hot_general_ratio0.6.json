@@ -1,0 +1,63 @@
+{
+  "hot_ratio": 0.6,
+  "duration": 40.11980724334717,
+  "completed": 200,
+  "errors": 0,
+  "empty_text_responses": 95,
+  "request_throughput": 4.985068816180936,
+  "mean_latency_ms": 200.459993744997,
+  "median_latency_ms": 51.14063300001703,
+  "p99_latency_ms": 1179.6367656500115,
+  "std_latency_ms": 325.9773864180361,
+  "per_adapter_metrics": {
+    "cold_dummy": {
+      "count": 40,
+      "mean_latency_ms": 649.0734124249941
+    },
+    "cold_instruct": {
+      "count": 40,
+      "mean_latency_ms": 44.15753442499408
+    },
+    "hot_general": {
+      "count": 120,
+      "mean_latency_ms": 103.02300729166566
+    }
+  },
+  "sample_responses": [
+    {
+      "adapter": "cold_dummy",
+      "served_model": "cold_dummy",
+      "latency_ms": 703.1452789999548,
+      "text": "For example: \"A database is an organized collection of data ",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "cold_instruct",
+      "served_model": "cold_instruct",
+      "latency_ms": 19.541991999972197,
+      "text": "",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "latency_ms": 16.197368999996797,
+      "text": "",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "latency_ms": 187.27532799999835,
+      "text": "Use evidence-based research to support claims and make argum",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "latency_ms": 57.384097999999994,
+      "text": "Use relevant examples and case studies to illustrate concept",
+      "finish_reason": "stop"
+    }
+  ]
+}

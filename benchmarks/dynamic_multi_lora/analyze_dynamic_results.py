@@ -79,7 +79,7 @@ def load_baseline_lru(results_dir: Path) -> list[SystemRow]:
             hot_ratio = result.get("hot_ratio")
             rows.append(
                 SystemRow(
-                    system="vllm_lru_baseline",
+                    system="multi_lora",
                     experiment="stable_skew",
                     hot_ratio=hot_ratio,
                     num_requests=int(result.get("completed", 0)),
@@ -100,7 +100,7 @@ def load_baseline_lru(results_dir: Path) -> list[SystemRow]:
         result = _load_json(path)
         rows.append(
             SystemRow(
-                system="vllm_lru_baseline",
+                system="multi_lora",
                 experiment="stable_skew",
                 hot_ratio=float(result.get("hot_ratio")),
                 num_requests=int(result.get("completed", 0)),
@@ -175,7 +175,7 @@ def load_lru_hot_change(results_dir: Path) -> dict[str, Any]:
     s = payload.get("summary") or {}
     rows: list[SystemRow] = [
         SystemRow(
-            system="vllm_lru_baseline",
+            system="multi_lora",
             experiment="hot_change",
             hot_ratio=None,
             num_requests=int(s.get("num_successful", 0)),
@@ -406,7 +406,7 @@ def plot_stable_skew(rows: list[SystemRow], output_path: Path) -> None:
 
     # Stable, distinguishable colors for the four systems.
     color_map = {
-        "vllm_lru_baseline": "tab:red",
+        "multi_lora": "tab:red",
         "dynamic_multi_lora": "tab:green",
     }
     # Static-premerged label looks like "static_premerged[hot=hot_general]".
@@ -528,7 +528,7 @@ def plot_hot_change(dynamic_summary: dict, output_path: Path,
             # rolling-mean curve. The rolling mean alone tells the story.
             ax.plot(lru_xs, lru_rolling, linewidth=2.4, color="tab:red",
                     linestyle="--",
-                    label=f"LRU baseline rolling mean ({lru_window})")
+                    label=f"multi_lora rolling mean ({lru_window})")
             lru_summary_for_anno = lru_payload.get("summary") or {}
 
     # Workload's hot adapter changes (segment boundaries on the time axis).
@@ -617,12 +617,12 @@ def plot_hot_change(dynamic_summary: dict, output_path: Path,
                 anno_lines.append(
                     "post-switch (same window):")
                 anno_lines.append(
-                    f"  LRU baseline    = {lru_mean_after:.0f} ms")
+                    f"  multi_lora      = {lru_mean_after:.0f} ms")
                 anno_lines.append(
                     f"  dynamic         = {dyn_mean_after:.0f} ms")
                 anno_lines.append(
                     f"  -> {lru_mean_after / max(1.0, dyn_mean_after):.2f}x "
-                    "faster vs LRU")
+                    "faster vs multi_lora")
 
         if anno_lines:
             ax.annotate(

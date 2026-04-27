@@ -1,0 +1,63 @@
+{
+  "hot_ratio": 0.8,
+  "duration": 28.82054853439331,
+  "completed": 200,
+  "errors": 0,
+  "empty_text_responses": 70,
+  "request_throughput": 6.939493180059632,
+  "mean_latency_ms": 143.94870951500027,
+  "median_latency_ms": 90.56201399999964,
+  "p99_latency_ms": 1174.8268737799633,
+  "std_latency_ms": 210.89258051534955,
+  "per_adapter_metrics": {
+    "hot_general": {
+      "count": 160,
+      "mean_latency_ms": 119.59756220625124
+    },
+    "cold_instruct": {
+      "count": 20,
+      "mean_latency_ms": 36.62061244999393
+    },
+    "cold_dummy": {
+      "count": 20,
+      "mean_latency_ms": 446.0859850499986
+    }
+  },
+  "sample_responses": [
+    {
+      "adapter": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "latency_ms": 132.94184599999426,
+      "text": "Use concrete examples to illustrate how neural networks are ",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "cold_instruct",
+      "served_model": "cold_instruct",
+      "latency_ms": 19.438008999998146,
+      "text": "",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "latency_ms": 13.70082599999023,
+      "text": "",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "latency_ms": 107.89457200002062,
+      "text": "Provide specific examples and case studies. Use a clear and ",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "latency_ms": 14.044653999974344,
+      "text": "",
+      "finish_reason": "stop"
+    }
+  ]
+}

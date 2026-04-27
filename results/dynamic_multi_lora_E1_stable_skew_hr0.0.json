@@ -1,0 +1,1857 @@
+{
+  "summary": {
+    "duration_s": 28.184831380844116,
+    "num_requests": 100,
+    "num_successful": 100,
+    "num_failed": 0,
+    "request_throughput": 3.5480077439088467,
+    "mean_latency_ms": 281.5312566800017,
+    "median_latency_ms": 23.358972000011136,
+    "p95_latency_ms": 1227.349320750004,
+    "p99_latency_ms": 1265.6307019100059,
+    "std_latency_ms": 405.5656965120718,
+    "per_adapter": {
+      "cold_dummy": {
+        "count": 50,
+        "mean_latency_ms": 472.39631444000156,
+        "p95_latency_ms": 1245.9579293999993
+      },
+      "cold_instruct": {
+        "count": 50,
+        "mean_latency_ms": 90.66619892000178,
+        "p95_latency_ms": 381.62706225001267
+      }
+    },
+    "fast_path_share": 0.0,
+    "per_profile": {
+      "hot_general": {
+        "count": 100,
+        "mean_latency_ms": 281.5312566800017
+      }
+    },
+    "num_switch_decisions": 0,
+    "num_switch_commits": 0,
+    "events": [],
+    "final_router_state": {
+      "current_hot": "hot_general",
+      "building_hot": null,
+      "stats": {
+        "window_size": 80,
+        "counts": {
+          "cold_instruct": 40,
+          "cold_dummy": 40
+        },
+        "shares": {
+          "cold_instruct": 0.5,
+          "cold_dummy": 0.5
+        },
+        "current_hot": "hot_general",
+        "building_hot": null,
+        "last_switch_time": 1777216823.6728103,
+        "seconds_since_switch": 28.20075488090515
+      }
+    }
+  },
+  "per_request": [
+    {
+      "request_index": 0,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 0.005590677261352539,
+      "done_offset_s": 0.28005099296569824,
+      "latency_s": 0.274347094999996,
+      "latency_ms": 274.347094999996,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Use examples to illustrate key concepts and explain their p"
+    },
+    {
+      "request_index": 1,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 0.2804732322692871,
+      "done_offset_s": 0.7366137504577637,
+      "latency_s": 0.4560255540000071,
+      "latency_ms": 456.0255540000071,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " For example, instead of saying \"graph algorithms are a type"
+    },
+    {
+      "request_index": 2,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 0.7368888854980469,
+      "done_offset_s": 0.7589027881622314,
+      "latency_s": 0.021929873000004818,
+      "latency_ms": 21.929873000004818,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 3,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 0.7589170932769775,
+      "done_offset_s": 0.7833096981048584,
+      "latency_s": 0.02430861099998083,
+      "latency_ms": 24.30861099998083,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 4,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 0.7833247184753418,
+      "done_offset_s": 1.0628490447998047,
+      "latency_s": 0.2794403690000138,
+      "latency_ms": 279.4403690000138,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Use real-life examples and simple visuals to help illustrat"
+    },
+    {
+      "request_index": 5,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 1.0631232261657715,
+      "done_offset_s": 1.5626747608184814,
+      "latency_s": 0.4994638640000062,
+      "latency_ms": 499.4638640000062,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Explain how these networks enable communication, storage, a"
+    },
+    {
+      "request_index": 6,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 1.563002586364746,
+      "done_offset_s": 1.9324536323547363,
+      "latency_s": 0.36936480400001415,
+      "latency_ms": 369.36480400001415,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Use examples to illustrate the effects of climate change on"
+    },
+    {
+      "request_index": 7,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 1.9327514171600342,
+      "done_offset_s": 1.9548211097717285,
+      "latency_s": 0.021986392000002297,
+      "latency_ms": 21.986392000002297,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 8,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 1.9548349380493164,
+      "done_offset_s": 1.9771599769592285,
+      "latency_s": 0.0222423350000156,
+      "latency_ms": 22.2423350000156,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 9,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 1.9771740436553955,
+      "done_offset_s": 1.998640775680542,
+      "latency_s": 0.021381845000007615,
+      "latency_ms": 21.381845000007615,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 10,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 1.9986553192138672,
+      "done_offset_s": 2.0199854373931885,
+      "latency_s": 0.021239596000015126,
+      "latency_ms": 21.239596000015126,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 11,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 2.0199990272521973,
+      "done_offset_s": 2.0415332317352295,
+      "latency_s": 0.021451876000014636,
+      "latency_ms": 21.451876000014636,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 12,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 2.0417728424072266,
+      "done_offset_s": 3.251429557800293,
+      "latency_s": 1.2095696500000201,
+      "latency_ms": 1209.5696500000201,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": "\n\nFriend: Hey, what's up?\n\nMe: I recently learned that datab"
+    },
+    {
+      "request_index": 13,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 3.2514445781707764,
+      "done_offset_s": 3.2736082077026367,
+      "latency_s": 0.02208067000000824,
+      "latency_ms": 22.08067000000824,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 14,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 3.273848295211792,
+      "done_offset_s": 3.581758737564087,
+      "latency_s": 0.3078254360000017,
+      "latency_ms": 307.8254360000017,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " How does the process of learning and applying machine learn"
+    },
+    {
+      "request_index": 15,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 3.5817723274230957,
+      "done_offset_s": 4.903316497802734,
+      "latency_s": 1.3214541199999985,
+      "latency_ms": 1321.4541199999985,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": "\nExplain the basic principles of quantum computing, includin"
+    },
+    {
+      "request_index": 16,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 4.9036900997161865,
+      "done_offset_s": 5.065828323364258,
+      "latency_s": 0.16205342099999598,
+      "latency_ms": 162.05342099999598,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Please provide real-life examples to illustrate your points"
+    },
+    {
+      "request_index": 17,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 5.066420793533325,
+      "done_offset_s": 5.224991083145142,
+      "latency_s": 0.15846899300001382,
+      "latency_ms": 158.46899300001382,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Use real-life examples to illustrate your points."
+    },
+    {
+      "request_index": 18,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 5.225324392318726,
+      "done_offset_s": 5.267602920532227,
+      "latency_s": 0.042177620999979126,
+      "latency_ms": 42.177620999979126,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 19,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 5.2676167488098145,
+      "done_offset_s": 5.6434690952301025,
+      "latency_s": 0.3756663850000166,
+      "latency_ms": 375.6663850000166,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Don't use technical jargon or make it too complicated. Use "
+    },
+    {
+      "request_index": 20,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 5.644970417022705,
+      "done_offset_s": 5.675443172454834,
+      "latency_s": 0.030379154999991442,
+      "latency_ms": 30.379154999991442,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 21,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 5.6754584312438965,
+      "done_offset_s": 5.879607677459717,
+      "latency_s": 0.20406691099998397,
+      "latency_ms": 204.06691099998397,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Use analogies and metaphors to make your explanation more c"
+    },
+    {
+      "request_index": 22,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 5.88011622428894,
+      "done_offset_s": 5.902702569961548,
+      "latency_s": 0.022489423999985547,
+      "latency_ms": 22.489423999985547,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 23,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 5.902719736099243,
+      "done_offset_s": 5.924593210220337,
+      "latency_s": 0.021794696000000613,
+      "latency_ms": 21.794696000000613,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 24,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 5.924605846405029,
+      "done_offset_s": 5.946792125701904,
+      "latency_s": 0.022107263000009425,
+      "latency_ms": 22.107263000009425,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 25,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 5.946806907653809,
+      "done_offset_s": 6.6458353996276855,
+      "latency_s": 0.6989467999999874,
+      "latency_ms": 698.9467999999874,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Describe the role of the master, slaves and replicas in a d"
+    },
+    {
+      "request_index": 26,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 6.646216154098511,
+      "done_offset_s": 7.6602783203125,
+      "latency_s": 1.0139556919999961,
+      "latency_ms": 1013.9556919999961,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Quantum computing uses quantum mechanics to perform calcula"
+    },
+    {
+      "request_index": 27,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 7.6605634689331055,
+      "done_offset_s": 7.683875799179077,
+      "latency_s": 0.02322909000000095,
+      "latency_ms": 23.22909000000095,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 28,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 7.683888673782349,
+      "done_offset_s": 7.706700801849365,
+      "latency_s": 0.022715636000015138,
+      "latency_ms": 22.715636000015138,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 29,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 7.706716299057007,
+      "done_offset_s": 7.890342950820923,
+      "latency_s": 0.18354258400000845,
+      "latency_ms": 183.54258400000845,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Provide real-world applications and explain how it impacts "
+    },
+    {
+      "request_index": 30,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 7.890625715255737,
+      "done_offset_s": 7.913326025009155,
+      "latency_s": 0.022612434000023995,
+      "latency_ms": 22.612434000023995,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 31,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 7.913339138031006,
+      "done_offset_s": 8.249783754348755,
+      "latency_s": 0.33636388299999,
+      "latency_ms": 336.36388299999,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Explain how climate change affects the economy, society, an"
+    },
+    {
+      "request_index": 32,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 8.250073432922363,
+      "done_offset_s": 8.27187180519104,
+      "latency_s": 0.021718839000016033,
+      "latency_ms": 21.718839000016033,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 33,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 8.271884679794312,
+      "done_offset_s": 8.291234254837036,
+      "latency_s": 0.01925744999999779,
+      "latency_ms": 19.25744999999779,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 34,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 8.291248798370361,
+      "done_offset_s": 9.519801616668701,
+      "latency_s": 1.2284691000000123,
+      "latency_ms": 1228.4691000000123,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " They are a complex system made up of billions of neurons, e"
+    },
+    {
+      "request_index": 35,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 9.520061016082764,
+      "done_offset_s": 10.736126184463501,
+      "latency_s": 1.215981453000012,
+      "latency_ms": 1215.981453000012,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Here are some examples:\n\n1. Breadth-first search (BFS): Thi"
+    },
+    {
+      "request_index": 36,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 10.736398220062256,
+      "done_offset_s": 10.759965658187866,
+      "latency_s": 0.02348885400002132,
+      "latency_ms": 23.48885400002132,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 37,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 10.75998044013977,
+      "done_offset_s": 11.241795539855957,
+      "latency_s": 0.48174304799999845,
+      "latency_ms": 481.74304799999845,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " For example:\n\n\"Graph algorithms are a collection of algorit"
+    },
+    {
+      "request_index": 38,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 11.242061138153076,
+      "done_offset_s": 11.265105962753296,
+      "latency_s": 0.022955877000015334,
+      "latency_ms": 22.955877000015334,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 39,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 11.265116930007935,
+      "done_offset_s": 12.257553815841675,
+      "latency_s": 0.9923573849999912,
+      "latency_ms": 992.3573849999912,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " For my friend, don't use technical jargon or complex terms."
+    },
+    {
+      "request_index": 40,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 12.257867813110352,
+      "done_offset_s": 12.28399133682251,
+      "latency_s": 0.026003599999995686,
+      "latency_ms": 26.003599999995686,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 41,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 12.284007787704468,
+      "done_offset_s": 12.805233240127563,
+      "latency_s": 0.5211289410000006,
+      "latency_ms": 521.1289410000006,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Explain how these systems work and how they improve the spe"
+    },
+    {
+      "request_index": 42,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 12.805506229400635,
+      "done_offset_s": 14.012468338012695,
+      "latency_s": 1.2068771649999803,
+      "latency_ms": 1206.8771649999803,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": "\n\nSophie: Yeah, absolutely! Renewable energy sources like wi"
+    },
+    {
+      "request_index": 43,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 14.012752771377563,
+      "done_offset_s": 14.03446912765503,
+      "latency_s": 0.0216297240000074,
+      "latency_ms": 21.6297240000074,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 44,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 14.034482479095459,
+      "done_offset_s": 14.056415319442749,
+      "latency_s": 0.021847483000016155,
+      "latency_ms": 21.847483000016155,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 45,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 14.056428670883179,
+      "done_offset_s": 14.079216718673706,
+      "latency_s": 0.022674822999988464,
+      "latency_ms": 22.674822999988464,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 46,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 14.079231977462769,
+      "done_offset_s": 14.101400375366211,
+      "latency_s": 0.022080743000003622,
+      "latency_ms": 22.080743000003622,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 47,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 14.10141372680664,
+      "done_offset_s": 14.12466287612915,
+      "latency_s": 0.023165731000005962,
+      "latency_ms": 23.165731000005962,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 48,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 14.12499737739563,
+      "done_offset_s": 14.149721384048462,
+      "latency_s": 0.02463699300000144,
+      "latency_ms": 24.63699300000144,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 49,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 14.149732828140259,
+      "done_offset_s": 14.541479349136353,
+      "latency_s": 0.39165981900001157,
+      "latency_ms": 391.65981900001157,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Use real-world examples and case studies to illustrate your"
+    },
+    {
+      "request_index": 50,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 14.541709423065186,
+      "done_offset_s": 14.565020084381104,
+      "latency_s": 0.023228649999992967,
+      "latency_ms": 23.228649999992967,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 51,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 14.565032958984375,
+      "done_offset_s": 14.587407350540161,
+      "latency_s": 0.022296026000020674,
+      "latency_ms": 22.296026000020674,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 52,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 14.587422132492065,
+      "done_offset_s": 14.610172271728516,
+      "latency_s": 0.02266977900001166,
+      "latency_ms": 22.66977900001166,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 53,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 14.61018681526184,
+      "done_offset_s": 14.632561206817627,
+      "latency_s": 0.02226995299997725,
+      "latency_ms": 22.26995299997725,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 54,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 14.632575273513794,
+      "done_offset_s": 15.041252851486206,
+      "latency_s": 0.4085775460000036,
+      "latency_ms": 408.5775460000036,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " You can also use real-world examples to make the concept mo"
+    },
+    {
+      "request_index": 55,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 15.04160213470459,
+      "done_offset_s": 16.25570845603943,
+      "latency_s": 1.2140163829999722,
+      "latency_ms": 1214.0163829999722,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " For example: \"A neural network is a computer program that u"
+    },
+    {
+      "request_index": 56,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 16.25572156906128,
+      "done_offset_s": 16.509588956832886,
+      "latency_s": 0.2537878059999912,
+      "latency_ms": 253.78780599999118,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " For example, say \"A computer vision algorithm can recognize"
+    },
+    {
+      "request_index": 57,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 16.509824514389038,
+      "done_offset_s": 17.725743770599365,
+      "latency_s": 1.215824825999988,
+      "latency_ms": 1215.824825999988,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " This should help your audience understand the concepts and "
+    },
+    {
+      "request_index": 58,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 17.726028442382812,
+      "done_offset_s": 17.906137943267822,
+      "latency_s": 0.18002748600000018,
+      "latency_ms": 180.02748600000018,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Use high-level terms and explain complex concepts in a way "
+    },
+    {
+      "request_index": 59,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 17.906493186950684,
+      "done_offset_s": 17.928690195083618,
+      "latency_s": 0.022105079999988675,
+      "latency_ms": 22.105079999988675,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 60,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 17.928704261779785,
+      "done_offset_s": 19.156130075454712,
+      "latency_s": 1.2272903850000034,
+      "latency_ms": 1227.2903850000034,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " I am glad to hear that you have found the information helpf"
+    },
+    {
+      "request_index": 61,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 19.157098054885864,
+      "done_offset_s": 20.422311782836914,
+      "latency_s": 1.2650668290000056,
+      "latency_ms": 1265.0668290000056,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": "\n\n(Voiceover 2) \"A database is a collection of data and info"
+    },
+    {
+      "request_index": 62,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 20.422602891921997,
+      "done_offset_s": 20.445760488510132,
+      "latency_s": 0.023044315000021243,
+      "latency_ms": 23.044315000021243,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 63,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 20.445773363113403,
+      "done_offset_s": 20.46724247932434,
+      "latency_s": 0.0213457799999901,
+      "latency_ms": 21.3457799999901,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 64,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 20.46725606918335,
+      "done_offset_s": 20.743321180343628,
+      "latency_s": 0.2759615659999781,
+      "latency_ms": 275.9615659999781,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " For example, \"Computer vision is the field of mathematics a"
+    },
+    {
+      "request_index": 65,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 20.74360966682434,
+      "done_offset_s": 20.766238927841187,
+      "latency_s": 0.02251141499999676,
+      "latency_ms": 22.51141499999676,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 66,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 20.766252994537354,
+      "done_offset_s": 21.38887596130371,
+      "latency_s": 0.6225314010000034,
+      "latency_ms": 622.5314010000034,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Start with the basics, like comparing a neural network to a"
+    },
+    {
+      "request_index": 67,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 21.389153718948364,
+      "done_offset_s": 21.98081874847412,
+      "latency_s": 0.5915781530000004,
+      "latency_ms": 591.5781530000004,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " For example: \"Knowing what products to recommend to custome"
+    },
+    {
+      "request_index": 68,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 21.981287717819214,
+      "done_offset_s": 22.00353741645813,
+      "latency_s": 0.022147103999998308,
+      "latency_ms": 22.147103999998308,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 69,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 22.0035502910614,
+      "done_offset_s": 22.02322292327881,
+      "latency_s": 0.019580659000013156,
+      "latency_ms": 19.580659000013156,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 70,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 22.023232460021973,
+      "done_offset_s": 22.04177951812744,
+      "latency_s": 0.01848026700000105,
+      "latency_ms": 18.48026700000105,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 71,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 22.04178786277771,
+      "done_offset_s": 22.060197591781616,
+      "latency_s": 0.01834052399999564,
+      "latency_ms": 18.34052399999564,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 72,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 22.060224294662476,
+      "done_offset_s": 23.314188957214355,
+      "latency_s": 1.2538610940000012,
+      "latency_ms": 1253.8610940000012,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " For example: \"Introducing the newest addition to our [produ"
+    },
+    {
+      "request_index": 73,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 23.314481735229492,
+      "done_offset_s": 23.33662438392639,
+      "latency_s": 0.022041860000001634,
+      "latency_ms": 22.041860000001634,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 74,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 23.336637496948242,
+      "done_offset_s": 23.358359336853027,
+      "latency_s": 0.02162315199998943,
+      "latency_ms": 21.62315199998943,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 75,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 23.3583722114563,
+      "done_offset_s": 23.380388975143433,
+      "latency_s": 0.021919018999994933,
+      "latency_ms": 21.919018999994933,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 76,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 23.380403757095337,
+      "done_offset_s": 23.402597188949585,
+      "latency_s": 0.022096192000020665,
+      "latency_ms": 22.096192000020665,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 77,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 23.40261197090149,
+      "done_offset_s": 23.42463183403015,
+      "latency_s": 0.021923361000006025,
+      "latency_ms": 21.923361000006025,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 78,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 23.42489743232727,
+      "done_offset_s": 23.446967601776123,
+      "latency_s": 0.02194237099999441,
+      "latency_ms": 21.94237099999441,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 79,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 23.446981191635132,
+      "done_offset_s": 23.805299043655396,
+      "latency_s": 0.3581931500000053,
+      "latency_ms": 358.1931500000053,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Make sure you use concrete examples and avoid technical jar"
+    },
+    {
+      "request_index": 80,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 23.80557084083557,
+      "done_offset_s": 24.237536907196045,
+      "latency_s": 0.4318591939999976,
+      "latency_ms": 431.8591939999976,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Explain how the key-value store works, how data is stored, "
+    },
+    {
+      "request_index": 81,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 24.237550973892212,
+      "done_offset_s": 24.261255502700806,
+      "latency_s": 0.023585851000007096,
+      "latency_ms": 23.585851000007096,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 82,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 24.261537313461304,
+      "done_offset_s": 24.283886909484863,
+      "latency_s": 0.022201640000020006,
+      "latency_ms": 22.201640000020006,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 83,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 24.28392481803894,
+      "done_offset_s": 24.30799412727356,
+      "latency_s": 0.023910951000004843,
+      "latency_ms": 23.910951000004843,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 84,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 24.308008909225464,
+      "done_offset_s": 24.3307363986969,
+      "latency_s": 0.02262881199999356,
+      "latency_ms": 22.62881199999356,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 85,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 24.33074927330017,
+      "done_offset_s": 24.68232774734497,
+      "latency_s": 0.3514796569999987,
+      "latency_ms": 351.4796569999987,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Your explanation should be written in clear and concise lan"
+    },
+    {
+      "request_index": 86,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 24.68262267112732,
+      "done_offset_s": 25.786282539367676,
+      "latency_s": 1.1035364630000117,
+      "latency_ms": 1103.5364630000117,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " Encourage listeners to think about ways they can reduce the"
+    },
+    {
+      "request_index": 87,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 25.786295652389526,
+      "done_offset_s": 25.808367252349854,
+      "latency_s": 0.02195791100001543,
+      "latency_ms": 21.95791100001543,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 88,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 25.808618783950806,
+      "done_offset_s": 25.830808401107788,
+      "latency_s": 0.022088139000004503,
+      "latency_ms": 22.088139000004503,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 89,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 25.83082151412964,
+      "done_offset_s": 25.852962493896484,
+      "latency_s": 0.022033233999991353,
+      "latency_ms": 22.033233999991353,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 90,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 25.852976083755493,
+      "done_offset_s": 25.87373423576355,
+      "latency_s": 0.020661074000003055,
+      "latency_ms": 20.661074000003055,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 91,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 25.873767137527466,
+      "done_offset_s": 27.11017084121704,
+      "latency_s": 1.2362985059999971,
+      "latency_ms": 1236.2985059999971,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": " For example: \"Rewards are a great way to reinforce good beh"
+    },
+    {
+      "request_index": 92,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 27.110433340072632,
+      "done_offset_s": 27.211084842681885,
+      "latency_s": 0.10055196199999727,
+      "latency_ms": 100.55196199999727,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Please provide sources for your explanations."
+    },
+    {
+      "request_index": 93,
+      "segment": "stable",
+      "adapter_name": "cold_dummy",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 27.211337566375732,
+      "done_offset_s": 27.233165502548218,
+      "latency_s": 0.021717350000017177,
+      "latency_ms": 21.717350000017177,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_dummy",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 94,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 27.23317837715149,
+      "done_offset_s": 27.79079508781433,
+      "latency_s": 0.5575178109999968,
+      "latency_ms": 557.5178109999968,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Explain how deep learning models work and their advantages "
+    },
+    {
+      "request_index": 95,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 27.791083335876465,
+      "done_offset_s": 27.81253147125244,
+      "latency_s": 0.02134089399999084,
+      "latency_ms": 21.34089399999084,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 96,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 27.81254553794861,
+      "done_offset_s": 27.833110570907593,
+      "latency_s": 0.02046770499998729,
+      "latency_ms": 20.46770499998729,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 97,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 27.8331241607666,
+      "done_offset_s": 27.852983236312866,
+      "latency_s": 0.019764826999988827,
+      "latency_ms": 19.764826999988827,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    },
+    {
+      "request_index": 98,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 27.852996826171875,
+      "done_offset_s": 28.162216424942017,
+      "latency_s": 0.30908125700000255,
+      "latency_ms": 309.08125700000255,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": " Use case studies and examples to illustrate the practical a"
+    },
+    {
+      "request_index": 99,
+      "segment": "stable",
+      "adapter_name": "cold_instruct",
+      "metadata": {
+        "role": "cold"
+      },
+      "send_offset_s": 28.16251039505005,
+      "done_offset_s": 28.184418439865112,
+      "latency_s": 0.021801191999998082,
+      "latency_ms": 21.801191999998082,
+      "status_code": 200,
+      "routed_to_hot": false,
+      "profile_used": "hot_general",
+      "served_model": "cold_instruct",
+      "error": null,
+      "text_preview": ""
+    }
+  ]
+}

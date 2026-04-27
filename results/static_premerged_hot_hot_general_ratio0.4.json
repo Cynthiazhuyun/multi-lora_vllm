@@ -1,0 +1,63 @@
+{
+  "hot_ratio": 0.4,
+  "duration": 42.880987882614136,
+  "completed": 200,
+  "errors": 0,
+  "empty_text_responses": 85,
+  "request_throughput": 4.664071652161934,
+  "mean_latency_ms": 214.23787713999903,
+  "median_latency_ms": 87.40533150000829,
+  "p99_latency_ms": 1182.7126778600098,
+  "std_latency_ms": 328.18962194327673,
+  "per_adapter_metrics": {
+    "hot_general": {
+      "count": 80,
+      "mean_latency_ms": 110.52674611249672
+    },
+    "cold_dummy": {
+      "count": 60,
+      "mean_latency_ms": 480.66100183333737
+    },
+    "cold_instruct": {
+      "count": 60,
+      "mean_latency_ms": 86.09626048333043
+    }
+  },
+  "sample_responses": [
+    {
+      "adapter": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "latency_ms": 211.5630199999714,
+      "text": "Discuss the importance of data science in various fields, it",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "hot_general",
+      "served_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "latency_ms": 65.92103700000962,
+      "text": "Use appropriate academic language and provide examples to il",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "cold_dummy",
+      "served_model": "cold_dummy",
+      "latency_ms": 19.772385999999642,
+      "text": "",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "cold_dummy",
+      "served_model": "cold_dummy",
+      "latency_ms": 456.59961100000146,
+      "text": "List the most important principles of computer vision, and e",
+      "finish_reason": "stop"
+    },
+    {
+      "adapter": "cold_instruct",
+      "served_model": "cold_instruct",
+      "latency_ms": 112.67247699998961,
+      "text": "Use examples and case studies to illustrate key concepts.",
+      "finish_reason": "stop"
+    }
+  ]
+}

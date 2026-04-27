@@ -1,0 +1,17 @@
+{
+  "hot_name": "cold_dummy",
+  "fused_model_dir": "/results/profiles_dynamic/profile_cold_dummy/fused_model",
+  "delta_adapter_dirs": {
+    "hot_general": "/results/profiles_dynamic/profile_cold_dummy/deltas/hot_general-vs-cold_dummy",
+    "cold_instruct": "/results/profiles_dynamic/profile_cold_dummy/deltas/cold_instruct-vs-cold_dummy"
+  },
+  "metadata": {
+    "base_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "hot_adapter_path": "/root/loras/cold_dummy",
+    "cold_adapters": {
+      "hot_general": "/root/loras/hot_general",
+      "cold_dummy": "/root/loras/cold_dummy",
+      "cold_instruct": "/root/loras/cold_instruct"
+    }
+  }
+}

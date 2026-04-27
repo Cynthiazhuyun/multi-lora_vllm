@@ -1,0 +1,29 @@
+{
+  "hot_ratio": 0.2,
+  "duration": 108.95992875099182,
+  "completed": 200,
+  "errors": 0,
+  "empty_text_responses": 49,
+  "error_rate": 0.0,
+  "request_throughput": 1.8355371767639805,
+  "mean_latency_ms": 544.6457969600008,
+  "median_latency_ms": 417.2200439999756,
+  "p99_latency_ms": 1101.3955099700024,
+  "std_latency_ms": 447.2569822295772,
+  "mean_ttft_ms": 181.54859898666692,
+  "per_adapter_metrics": {
+    "hot_general": {
+      "count": 40,
+      "mean_latency_ms": 293.0543305499981
+    },
+    "cold_dummy": {
+      "count": 80,
+      "mean_latency_ms": 543.6858463750013
+    },
+    "cold_instruct": {
+      "count": 80,
+      "mean_latency_ms": 671.4014807500014
+    }
+  },
+  "error_details": []
+}

@@ -1,0 +1,21 @@
+{
+  "hot_ratio": 1.0,
+  "duration": 57.70724701881409,
+  "completed": 200,
+  "errors": 0,
+  "empty_text_responses": 53,
+  "error_rate": 0.0,
+  "request_throughput": 3.465769211530654,
+  "mean_latency_ms": 288.36822162999175,
+  "median_latency_ms": 251.71273349997136,
+  "p99_latency_ms": 1093.5096367100414,
+  "std_latency_ms": 246.3255120385688,
+  "mean_ttft_ms": 96.12274054333056,
+  "per_adapter_metrics": {
+    "hot_general": {
+      "count": 200,
+      "mean_latency_ms": 288.36822162999175
+    }
+  },
+  "error_details": []
+}
