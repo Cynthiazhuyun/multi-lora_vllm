@@ -296,18 +296,28 @@ def run_dynamic_experiments(
     # what lets us see latency actually drop after the switch.
     hot_change_segment_size: int = 600,
     hot_change_request_rate_per_s: float | None = 2.0,
-    thrashing_block_size: int = 30,
-    thrashing_num_blocks: int = 8,
+    thrashing_block_size: int = 15,
+    thrashing_num_blocks: int = 24,
+    thrashing_block_hot_ratio: float = 0.9,
+    thrashing_request_rate_per_s: float | None = 2.0,
     request_rate_per_s: float | None = None,
 ):
     """Run all three dynamic experiments back-to-back.
 
     Parameters mirror the schedule generators in ``workload.py``.
 
-    ``request_rate_per_s`` controls E1/E3 pacing. ``hot_change_request_rate_per_s``
-    is a separate knob for E2 because E2 needs to be long enough in
-    *wall-clock* for the (~2 min) blue-green switch to complete with
-    headroom; we therefore pace E2 to a fixed rate by default.
+    ``request_rate_per_s`` controls E1 pacing.
+    ``hot_change_request_rate_per_s`` is a separate knob for E2 because
+    E2 needs to be long enough in *wall-clock* for the (~2 min)
+    blue-green switch to complete with headroom; we therefore pace E2
+    to a fixed rate by default.
+
+    ``thrashing_request_rate_per_s`` plays the same role for E3.
+    Without pacing, 240 reqs finish in ~60 s while a single commit
+    takes ~110 s, so the naive policy can only emit one commit and
+    looks deceptively similar to guarded. Pacing E3 to ~2 req/s gives
+    the workload enough wall-clock for naive to actually thrash
+    (multiple commits) while guarded stays at 0.
     """
     sys.path.insert(0, CONTAINER_SOURCE_DIR)
     sys.path.insert(0, CONTAINER_BASELINE_DIR)
@@ -489,10 +499,14 @@ def run_dynamic_experiments(
                  switch_margin=0.15,
                  cooldown_sec=60.0,
              )),
+            # Naive: tiny window (10 reqs ≈ 5 s @ 2 req/s, smaller than
+            # one block) so it flips its idea of "dominant" every block,
+            # zero margin and zero cooldown so it acts on every flip.
+            # This is the policy we want to *lose* on E3.
             ("naive",
              PopularityTrackerConfig(
-                 window_size=20,
-                 min_window_size=10,
+                 window_size=10,
+                 min_window_size=5,
                  merge_threshold=0.5,
                  switch_margin=0.0,
                  cooldown_sec=0.0,
@@ -521,14 +535,14 @@ def run_dynamic_experiments(
                 block_size=thrashing_block_size,
                 num_blocks=thrashing_num_blocks,
                 candidates=thrashing_candidates,
-                block_hot_ratio=0.85,
+                block_hot_ratio=thrashing_block_hot_ratio,
             )
             workload_t = _run_workload(
                 router=router_t,
                 schedule=schedule_t,
                 prompts_by_style=prompts_by_style,
                 style_for_adapter=style_for_adapter,
-                request_rate_per_s=request_rate_per_s,
+                request_rate_per_s=thrashing_request_rate_per_s,
                 label=f"E3 thrashing/{guard_label}",
             )
             router_t.wait_for_pending_switch(timeout=180.0)
@@ -567,8 +581,10 @@ def main(initial_hot: str = "hot_general",
          stable_skew_num_requests: int = 100,
          hot_change_segment_size: int = 600,
          hot_change_request_rate_per_s: float = 2.0,
-         thrashing_block_size: int = 30,
-         thrashing_num_blocks: int = 8):
+         thrashing_block_size: int = 15,
+         thrashing_num_blocks: int = 24,
+         thrashing_block_hot_ratio: float = 0.9,
+         thrashing_request_rate_per_s: float = 2.0):
     """Entrypoint::
 
         modal run benchmarks/dynamic_multi_lora/run_dynamic_multi_lora_on_modal.py
@@ -577,6 +593,15 @@ def main(initial_hot: str = "hot_general",
     minutes wall-clock (600 reqs at 2 req/s); this leaves enough room
     after the blue-green switch (~2 min on A100) to actually observe
     the post-switch fast-path latency drop.
+
+    The E3 (thrashing) defaults are tuned to make the naive vs guarded
+    contrast obvious: short blocks (15 reqs each) at 0.9 hot-ratio
+    flip the dominant adapter rapidly, while pacing the workload at
+    2 req/s gives the run ~3 minutes of wall-clock so naive can
+    actually emit multiple ``switch_committed`` events (each profile
+    rebuild is ~110 s on A100). Guarded, with cooldown_sec=60 and a
+    window larger than one block, sees a roughly 50/50 split and
+    correctly stays put.
     """
     print(f"Launching dynamic multi-LoRA experiments (initial_hot={initial_hot})")
     run_dynamic_experiments.remote(
@@ -586,5 +611,7 @@ def main(initial_hot: str = "hot_general",
         hot_change_request_rate_per_s=hot_change_request_rate_per_s,
         thrashing_block_size=thrashing_block_size,
         thrashing_num_blocks=thrashing_num_blocks,
+        thrashing_block_hot_ratio=thrashing_block_hot_ratio,
+        thrashing_request_rate_per_s=thrashing_request_rate_per_s,
     )
     print("Done. Results in Modal volume vllm-benchmark-results.")

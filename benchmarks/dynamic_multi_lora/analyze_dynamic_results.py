@@ -667,6 +667,8 @@ def plot_thrashing(dynamic_summary: dict, output_path: Path) -> None:
     experiments = dynamic_summary.get("experiments") or {}
     fig, ax = plt.subplots(figsize=(11, 4.5))
     have_anything = False
+    commit_lines: list[str] = []
+    commit_colors: list[str] = []
     for variant, color in [("guarded", "tab:blue"), ("naive", "tab:red")]:
         t = experiments.get(f"thrashing_{variant}")
         if not t:
@@ -675,30 +677,61 @@ def plot_thrashing(dynamic_summary: dict, output_path: Path) -> None:
         xs = [r["request_index"] for r in per_req]
         lat = [r["latency_ms"] for r in per_req]
         ax.plot(xs, lat, color=color, alpha=0.4, label=f"{variant} per-req")
-        if xs:
-            window = max(1, len(xs) // 30)
-            rolling = []
-            for i in range(len(xs)):
-                lo = max(0, i - window // 2)
-                hi = min(len(xs), i + window // 2 + 1)
-                rolling.append(statistics.mean(lat[lo:hi]))
-            ax.plot(xs, rolling, color=color, linewidth=2.0,
-                    label=f"{variant} rolling")
-            n_commits = t["summary"].get("num_switch_commits", 0)
-            ax.text(0.99, 0.95 if variant == "guarded" else 0.85,
-                    f"{variant}: {n_commits} commits",
-                    transform=ax.transAxes,
-                    color=color, ha="right", va="top",
-                    fontsize=10, weight="bold")
-            have_anything = True
+        if not xs:
+            continue
+        window = max(1, len(xs) // 30)
+        rolling = []
+        for i in range(len(xs)):
+            lo = max(0, i - window // 2)
+            hi = min(len(xs), i + window // 2 + 1)
+            rolling.append(statistics.mean(lat[lo:hi]))
+        ax.plot(xs, rolling, color=color, linewidth=2.0,
+                label=f"{variant} rolling")
+        events = t["summary"].get("events") or []
+        # Map switch_committed timestamps -> request_index by finding the
+        # request whose absolute send wall-time is closest to the event.
+        # We don't have absolute send wall-time per request here, so fall
+        # back to ordering: the commit always lands strictly *between*
+        # the request that triggered the decide and the next one, but
+        # for visualization purposes the rolling mean already shows the
+        # impact; we approximate by placing the marker at the request
+        # whose normalized progress matches the event's normalized time
+        # (commit_ts - ts_first_event_or_min) / duration.
+        commit_evs = [e for e in events if e["kind"] == "switch_committed"]
+        duration_s = t["summary"].get("duration_s") or 1.0
+        if commit_evs:
+            # Estimate workload start = min(ts among events) - <small>.
+            # ``send_offset_s`` isn't carried into per_req in this view;
+            # instead use len(xs)/duration as the request-rate proxy.
+            req_rate = len(xs) / duration_s if duration_s > 0 else 0.0
+            t0 = min(e["timestamp"] for e in events)
+            for ev in commit_evs:
+                rel = max(0.0, ev["timestamp"] - t0)
+                idx = min(int(rel * req_rate), len(xs) - 1)
+                ax.axvline(xs[idx], color=color, linestyle=":",
+                           linewidth=1.4, alpha=0.85)
+        n_commits = t["summary"].get("num_switch_commits", 0)
+        commit_lines.append(f"{variant}: {n_commits} commits")
+        commit_colors.append(color)
+        have_anything = True
     if not have_anything:
         plt.close(fig)
         return
+
+    for i, (line, color) in enumerate(zip(commit_lines, commit_colors)):
+        ax.annotate(
+            line,
+            xy=(0.02, 0.95 - 0.06 * i), xycoords="axes fraction",
+            fontsize=11, weight="bold", va="top", ha="left",
+            color=color,
+        )
+
     ax.set_xlabel("request index")
     ax.set_ylabel("latency (ms)")
-    ax.set_title("Thrashing workload: guarded vs naive policy")
+    ax.set_title("Thrashing workload: guarded vs naive policy "
+                 "(dotted = switch_committed)")
     ax.grid(True, alpha=0.3)
-    ax.legend(fontsize=8)
+    ax.legend(fontsize=8, loc="upper right")
     fig.tight_layout()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(output_path, dpi=150)
